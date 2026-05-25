@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /thank-you
+
+Sitemap: https://www.businessvaluationexperts.co.uk/sitemap.xml
