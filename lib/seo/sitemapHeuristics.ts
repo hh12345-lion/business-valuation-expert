@@ -1,4 +1,4 @@
-/** Sitemap changefreq / priority — SEO-ARCHITECTURE §9 */
+/** Sitemap changefreq / priority - SEO-ARCHITECTURE §9 */
 export type ChangeFreq =
   | "always"
   | "hourly"

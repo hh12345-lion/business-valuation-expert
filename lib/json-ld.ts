@@ -1,4 +1,4 @@
-/** @deprecated Import from `@/lib/schema` — kept for backward compatibility */
+/** @deprecated Import from `@/lib/schema` - kept for backward compatibility */
 export {
   ORGANIZATION_ID as organizationId,
   WEBSITE_ID as websiteId,

@@ -64,7 +64,7 @@ export default function ServicesPage() {
           Business Valuation Expert Witness Services
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-white/80">
-          CPR Part 35 civil and FPR Part 25 family proceedings — court-ready
+          CPR Part 35 civil and FPR Part 25 family proceedings - court-ready
           valuation reports from qualified UK experts for solicitors and law firms.
         </p>
       </PageHero>
@@ -103,7 +103,7 @@ export default function ServicesPage() {
                 <div className="mt-6 overflow-x-auto">
                   <table className="w-full min-w-[320px] border-collapse text-sm">
                     <caption className="mb-3 text-left text-sm font-medium text-charcoal">
-                      {service.title} — expert witness methodology (UK)
+                      {service.title} - expert witness methodology (UK)
                     </caption>
                     <thead>
                       <tr className="border-b border-border bg-muted">

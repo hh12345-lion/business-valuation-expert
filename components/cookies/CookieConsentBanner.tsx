@@ -40,7 +40,7 @@ export function CookieConsentBanner() {
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-[15px]">
                   We use cookies to run this site securely, understand how it is
-                  used when you allow it, and — only with your permission — support
+                  used when you allow it, and - only with your permission - support
                   relevant communications. You can change your mind anytime via{" "}
                   <strong className="font-medium text-white">Cookie settings</strong>{" "}
                   in the footer.

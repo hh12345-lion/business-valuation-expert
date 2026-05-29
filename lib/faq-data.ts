@@ -3,7 +3,7 @@ import type { FaqItem } from "./types";
 export const FAQ_ITEMS: FaqItem[] = [
   {
     q: "What is a business valuation expert witness?",
-    a: "A business valuation expert witness is a qualified financial professional — typically a chartered accountant, CFA, or certified valuation analyst — instructed to provide an independent, court-admissible opinion on the value of a business or shareholding in UK legal proceedings. Their primary duty is to the court under CPR Part 35 (civil) or FPR Part 25 (family), not to the instructing solicitor.",
+    a: "A business valuation expert witness is a qualified financial professional - typically a chartered accountant, CFA, or certified valuation analyst - instructed to provide an independent, court-admissible opinion on the value of a business or shareholding in UK legal proceedings. Their primary duty is to the court under CPR Part 35 (civil) or FPR Part 25 (family), not to the instructing solicitor.",
   },
   {
     q: "What legal cases require a business valuation expert witness?",
@@ -19,7 +19,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     q: "What is fair value vs fair market value in S994 disputes?",
-    a: "Fair market value is the price a willing buyer would pay a willing seller without compulsion. Fair value in S994 unfair prejudice petitions is a legal standard — courts typically value shares without minority discount, reflecting proportionate share of the whole company where unfair prejudice is found.",
+    a: "Fair market value is the price a willing buyer would pay a willing seller without compulsion. Fair value in S994 unfair prejudice petitions is a legal standard - courts typically value shares without minority discount, reflecting proportionate share of the whole company where unfair prejudice is found.",
   },
   {
     q: "Should I use a Single Joint Expert or party-appointed expert?",
@@ -35,15 +35,15 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     q: "What is the Ikarian Reefer duty and how does it apply?",
-    a: "Established in The Ikarian Reefer [1993], the expert's primary duty is to the court, not the instructing party. This is codified in CPR Part 35 and FPR Part 25. Experts must be independent, objective, and assist the court rather than advocate for their client — whether appointed as SJE or party expert.",
+    a: "Established in The Ikarian Reefer [1993], the expert's primary duty is to the court, not the instructing party. This is codified in CPR Part 35 and FPR Part 25. Experts must be independent, objective, and assist the court rather than advocate for their client - whether appointed as SJE or party expert.",
   },
   {
     q: "How early should I instruct a business valuation expert?",
-    a: "Instruct as soon as the need for valuation is identified — early instruction allows better document gathering, joint expert meetings before trial, and compliance with court timetables. In family cases, obtain court permission before incurring fees where required under FPR Part 25.",
+    a: "Instruct as soon as the need for valuation is identified - early instruction allows better document gathering, joint expert meetings before trial, and compliance with court timetables. In family cases, obtain court permission before incurring fees where required under FPR Part 25.",
   },
   {
     q: "Can a business valuation expert be challenged (Daubert/CPR)?",
-    a: "In UK civil proceedings, experts are challenged through cross-examination, criticism of methodology in joint statements, and CPR Part 35 compliance — not US Daubert hearings. Courts may exclude or discount evidence where the expert lacks independence, relevant expertise, or reliable methodology.",
+    a: "In UK civil proceedings, experts are challenged through cross-examination, criticism of methodology in joint statements, and CPR Part 35 compliance - not US Daubert hearings. Courts may exclude or discount evidence where the expert lacks independence, relevant expertise, or reliable methodology.",
   },
   {
     q: "What documents should I provide when instructing an expert?",

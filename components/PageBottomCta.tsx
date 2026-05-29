@@ -9,7 +9,7 @@ export function PageBottomCta() {
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
           Submit your case details and we will match you with a qualified UK
-          expert — CPR Part 35 and FPR Part 25 compliant. Response within one
+          expert - CPR Part 35 and FPR Part 25 compliant. Response within one
           business day.
         </p>
         <Link

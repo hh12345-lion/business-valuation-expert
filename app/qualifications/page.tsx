@@ -23,7 +23,7 @@ const QUALIFICATIONS_CLUSTER = [
 export const metadata: Metadata = buildPageMetadata({
   title: "Business Valuation Expert Witness Qualifications UK | ACA, CVA, CFA & RICS",
   description:
-    "What credentials should a UK business valuation expert witness hold? ACA, FCA, CVA, CFA, RICS explained — plus CPR Part 35 and FPR Part 25 compliance standards.",
+    "What credentials should a UK business valuation expert witness hold? ACA, FCA, CVA, CFA, RICS explained - plus CPR Part 35 and FPR Part 25 compliance standards.",
   path: "/qualifications",
 });
 
@@ -58,19 +58,19 @@ export default function QualificationsPage() {
           <div>
             <dt className="font-semibold text-charcoal">ACA / FCA (ICAEW)</dt>
             <dd className="mt-1">
-              Chartered Accountant — the primary UK accountancy qualification. Essential baseline for financial expert witnesses.
+              Chartered Accountant - the primary UK accountancy qualification. Essential baseline for financial expert witnesses.
             </dd>
           </div>
           <div>
             <dt className="font-semibold text-charcoal">ACCA / FCCA</dt>
             <dd className="mt-1">
-              Association of Chartered Certified Accountants — widely recognised for forensic and valuation work.
+              Association of Chartered Certified Accountants - widely recognised for forensic and valuation work.
             </dd>
           </div>
           <div>
             <dt className="font-semibold text-charcoal">CFA (Chartered Financial Analyst)</dt>
             <dd className="mt-1">
-              International qualification covering valuation, investment analysis, and financial modelling — particularly relevant for DCF-heavy valuations.
+              International qualification covering valuation, investment analysis, and financial modelling - particularly relevant for DCF-heavy valuations.
             </dd>
           </div>
           <div>
@@ -80,19 +80,19 @@ export default function QualificationsPage() {
             </dd>
           </div>
           <div>
-            <dt className="font-semibold text-charcoal">ABV (Accredited in Business Valuation — AICPA)</dt>
+            <dt className="font-semibold text-charcoal">ABV (Accredited in Business Valuation - AICPA)</dt>
             <dd className="mt-1">US credential recognised in international litigation.</dd>
           </div>
           <div>
             <dt className="font-semibold text-charcoal">RICS</dt>
             <dd className="mt-1">
-              Royal Institution of Chartered Surveyors — relevant for property-holding companies and real estate businesses.
+              Royal Institution of Chartered Surveyors - relevant for property-holding companies and real estate businesses.
             </dd>
           </div>
           <div>
             <dt className="font-semibold text-charcoal">ICAEW Business Valuation Community</dt>
             <dd className="mt-1">
-              ICAEW members specialising in business valuation — recognised by UK courts as a marker of specialist expertise.
+              ICAEW members specialising in business valuation - recognised by UK courts as a marker of specialist expertise.
             </dd>
           </div>
         </dl>
@@ -115,7 +115,7 @@ export default function QualificationsPage() {
             primary duty to the court under CPR Part 35. In family proceedings, FPR
             Part 25 applies the same principle. The expert must be independent,
             objective, and assist the court rather than advocate for the instructing
-            party — even when appointed by one party alone.
+            party - even when appointed by one party alone.
           </p>
         </Prose>
 

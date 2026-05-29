@@ -14,7 +14,7 @@ import { pageGraph } from "@/lib/schema";
 export const metadata: Metadata = buildPageMetadata({
   title: "Solicitor Guides: Business Valuation Expert Witnesses UK | Methods & Disputes",
   description:
-    "In-depth guides for UK solicitors on business valuation expert witnesses — DCF methodology, shareholder disputes, matrimonial valuations, and more.",
+    "In-depth guides for UK solicitors on business valuation expert witnesses - DCF methodology, shareholder disputes, matrimonial valuations, and more.",
   path: "/guides",
 });
 

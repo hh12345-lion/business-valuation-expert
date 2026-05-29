@@ -82,22 +82,22 @@ export default function CookiePolicyPage() {
             <h2 className="text-xl font-semibold text-charcoal">4. Categories we use</h2>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong>Necessary</strong> — required for security, consent storage,
+                <strong>Necessary</strong> - required for security, consent storage,
                 core navigation, and similar essential functions. Always active.
               </li>
               <li>
-                <strong>Analytics</strong> — helps us measure traffic and improve
+                <strong>Analytics</strong> - helps us measure traffic and improve
                 the site (for example Google Analytics, Hotjar). Only if you allow
                 this category.
               </li>
               <li>
-                <strong>Marketing</strong> — may include advertising and social
+                <strong>Marketing</strong> - may include advertising and social
                 measurement tools (for example Meta Pixel, LinkedIn Insight Tag,
                 tags fired through Google Tag Manager). Only if you allow this
                 category.
               </li>
               <li>
-                <strong>Preferences</strong> — remembers optional UI or feature
+                <strong>Preferences</strong> - remembers optional UI or feature
                 choices when we offer them. Only if you allow this category.
               </li>
             </ul>

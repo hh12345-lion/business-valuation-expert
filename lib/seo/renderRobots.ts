@@ -2,7 +2,7 @@ import { SITE_URL } from "@/lib/site";
 
 /**
  * Paths crawlers should not treat as indexable HTML.
- * Fixed template — not derived from URL inventory (see docs/SITEMAP-AND-ROBOTS.md).
+ * Fixed template - not derived from URL inventory (see docs/SITEMAP-AND-ROBOTS.md).
  */
 export const ROBOTS_DISALLOW_PATHS = [
   "/admin/",

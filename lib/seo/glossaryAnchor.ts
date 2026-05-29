@@ -1,4 +1,4 @@
-/** Appendix C — fragment IDs for /glossary#{anchor} */
+/** Appendix C - fragment IDs for /glossary#{anchor} */
 export function glossaryAnchorId(term: string): string {
   return term
     .toLowerCase()

@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 /**
- * Google Consent Mode v2 defaults — denied before hydration so no optional
+ * Google Consent Mode v2 defaults - denied before hydration so no optional
  * tag may read cookies until the CMP grants categories (runs beforeInteractive).
  */
 export function ConsentModeBootstrap() {

@@ -16,10 +16,10 @@ export const VALUATION_METHODS: ContentPage[] = [
     metaDescription:
       "How UK business valuation expert witnesses use discounted cash flow (DCF), WACC, terminal value, and cash flow projections in litigation and tax disputes.",
     hubLabel: "Discounted Cash Flow (DCF)",
-    h1: "Discounted Cash Flow (DCF) — Business Valuation Method",
+    h1: "Discounted Cash Flow (DCF) - Business Valuation Method",
     paragraphs: [
       "Discounted cash flow (DCF) values a business by projecting future cash flows and discounting them to present value using a risk-adjusted discount rate, typically the weighted average cost of capital (WACC).",
-      "UK expert witnesses use DCF for growing, profitable companies with reliable forecasts — particularly technology, professional services, and SaaS businesses. The method is forward-looking and captures growth potential, but it is highly sensitive to assumptions and is frequently contested between experts in litigation.",
+      "UK expert witnesses use DCF for growing, profitable companies with reliable forecasts - particularly technology, professional services, and SaaS businesses. The method is forward-looking and captures growth potential, but it is highly sensitive to assumptions and is frequently contested between experts in litigation.",
     ],
     faq: [
       {
@@ -71,9 +71,9 @@ export const VALUATION_METHODS: ContentPage[] = [
     metaDescription:
       "Net asset value (NAV) valuations for property companies, investment holdings, loss-making businesses, and break-up scenarios in UK litigation.",
     hubLabel: "Net Asset Value (NAV)",
-    h1: "Net Asset Value (NAV) — Asset-Based Valuation",
+    h1: "Net Asset Value (NAV) - Asset-Based Valuation",
     paragraphs: [
-      "Net asset value (NAV) values a business based on the fair value of its assets minus liabilities — at book value, fair value, or forced sale value depending on the legal context.",
+      "Net asset value (NAV) values a business based on the fair value of its assets minus liabilities - at book value, fair value, or forced sale value depending on the legal context.",
       "NAV is commonly used for property-holding companies, investment vehicles, loss-making businesses, and winding-up scenarios. Experts revalue properties and investments, identify contingent liabilities, and conclude on going concern versus break-up basis.",
     ],
     faq: [

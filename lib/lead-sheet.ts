@@ -32,7 +32,7 @@ function asSheetText(value: string): string {
 }
 
 /**
- * Row values in column order — must match row 1 in the spreadsheet tab.
+ * Row values in column order - must match row 1 in the spreadsheet tab.
  * See docs/google-sheets.md for header names.
  */
 export function buildLeadSheetRow(lead: LeadFields): (string | null)[] {
@@ -56,7 +56,7 @@ export function buildLeadSheetRow(lead: LeadFields): (string | null)[] {
 
 /**
  * Appends a contact lead row when Google Sheets env vars are set.
- * Throws on API errors — callers should catch so webhook success is not blocked.
+ * Throws on API errors - callers should catch so webhook success is not blocked.
  */
 export async function appendLeadToGoogleSheet(lead: LeadFields): Promise<void> {
   if (!isGoogleSheetsConfigured()) {

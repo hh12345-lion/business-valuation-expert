@@ -85,7 +85,7 @@ export default function FeesPage() {
 
         <p className="mt-8 text-sm text-foreground/70">
           Sources: Expert Evidence International; Academy of Experts; industry benchmarks.
-          Indicative rates for 2025 — confirm fees with the instructed expert.
+          Indicative rates for 2025 - confirm fees with the instructed expert.
         </p>
         <ContentClusterNav links={FAQ_PAGE_CLUSTER} />
       </ContentSection>

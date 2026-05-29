@@ -42,7 +42,7 @@ export default function WhatIsPage() {
         <p className="mt-4 max-w-3xl text-lg text-white/80">
           A business valuation expert witness is a qualified financial
           professional who gives independent, court-admissible opinions on the
-          value of a company or shareholding in UK civil and family proceedings —
+          value of a company or shareholding in UK civil and family proceedings,
           with a primary duty to the court under CPR Part 35 or FPR Part 25, not
           to the instructing solicitor.
         </p>
@@ -57,7 +57,7 @@ export default function WhatIsPage() {
             analyst retained to provide an independent opinion on business value.
             Unlike a commercial valuer advising on a transaction, an expert
             witness owes their primary duty to the court, not to the instructing
-            party — whether appointed as a single joint expert or by one party
+            party - whether appointed as a single joint expert or by one party
             alone.
           </p>
         </Prose>
@@ -74,7 +74,7 @@ export default function WhatIsPage() {
         </ul>
 
         <h2 className="mt-10 text-2xl font-bold text-charcoal">
-          Two Legal Frameworks — CPR Part 35 vs FPR Part 25
+          Two Legal Frameworks - CPR Part 35 vs FPR Part 25
         </h2>
         <GeoComparisonTable
           caption="CPR Part 35 vs FPR Part 25 for UK business valuation expert witnesses"
@@ -136,7 +136,7 @@ export default function WhatIsPage() {
         <Prose>
           <p className="mt-4">
             A business valuation expert witness owes their primary duty to the
-            court, not the instructing solicitor or client — established in{" "}
+            court, not the instructing solicitor or client - established in{" "}
             <em>The Ikarian Reefer</em> [1993] and codified in CPR Part 35 and FPR
             Part 25. See our{" "}
             <Link href="/qualifications" className="text-green hover:underline">

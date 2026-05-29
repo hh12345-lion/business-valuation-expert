@@ -92,7 +92,7 @@ export const SERVICES: Service[] = [
     summary:
       "Fair value valuations for Companies Act 2006 unfair prejudice petitions.",
     content:
-      "Experts value shares in s994 unfair prejudice petitions at fair value — typically without minority discount. We support joint expert meetings, joint statements under CPR PD35, and High Court Chancery Division trials where petitioner and respondent valuations diverge.",
+      "Experts value shares in s994 unfair prejudice petitions at fair value - typically without minority discount. We support joint expert meetings, joint statements under CPR PD35, and High Court Chancery Division trials where petitioner and respondent valuations diverge.",
     phases: [
       {
         phase: "Case Analysis",
@@ -267,7 +267,7 @@ export const SERVICES: Service[] = [
     summary:
       "Non-litigated valuations under shareholders' agreements and ICAEW schemes.",
     content:
-      "We support binding and non-binding expert determination under shareholders' agreements, partnership deeds, and ICAEW appointment schemes — providing independent valuations without full court proceedings where parties have agreed a determination mechanism.",
+      "We support binding and non-binding expert determination under shareholders' agreements, partnership deeds, and ICAEW appointment schemes - providing independent valuations without full court proceedings where parties have agreed a determination mechanism.",
     phases: [
       {
         phase: "Mandate Review",

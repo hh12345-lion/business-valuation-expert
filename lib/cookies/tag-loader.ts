@@ -56,7 +56,7 @@ export function mountGoogleAnalytics(gaId: string, p: CookiePreferences): void {
   document.head.appendChild(s);
 }
 
-/** Google Tag Manager container — often used for marketing + analytics tags. */
+/** Google Tag Manager container - often used for marketing + analytics tags. */
 export function mountGtm(gtmId: string): void {
   if (typeof document === "undefined") return;
   if (document.querySelector(`script[data-bve="gtm-${gtmId}"]`)) return;

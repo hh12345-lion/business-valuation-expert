@@ -22,7 +22,7 @@ const breadcrumbs = [
 export const metadata: Metadata = buildPageMetadata({
   title: "Our Business Valuation Expert Witnesses | UK Chartered Accountants",
   description:
-    "BusinessValuationExperts.co.uk connects UK solicitors with qualified business valuation expert witnesses — ACA, FCA, CVA, and CFA credentialed specialists for litigation and family law.",
+    "BusinessValuationExperts.co.uk connects UK solicitors with qualified business valuation expert witnesses - ACA, FCA, CVA, and CFA credentialed specialists for litigation and family law.",
   path: "/experts",
 });
 
@@ -61,7 +61,7 @@ export default function ExpertsPage() {
         </h1>
         <p className="mt-4 text-lg text-white/80">
           UK chartered accountants and valuation specialists. Profiles available upon
-          instruction — submit your case details for a matched introduction.
+          instruction - submit your case details for a matched introduction.
         </p>
       </PageHero>
 

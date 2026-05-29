@@ -13,7 +13,7 @@ import { faqPageSchema, pageGraph } from "@/lib/schema";
 export const metadata: Metadata = buildPageMetadata({
   title: "Business Valuation Expert Witness FAQ UK | Common Questions Answered",
   description:
-    "Answers to common questions about UK business valuation expert witnesses — valuation methods, fees, SJE vs party expert, CPR Part 35, FPR Part 25, and more.",
+    "Answers to common questions about UK business valuation expert witnesses - valuation methods, fees, SJE vs party expert, CPR Part 35, FPR Part 25, and more.",
   path: "/faq",
 });
 
@@ -39,7 +39,7 @@ export default function FaqPage() {
           Business Valuation Expert Witness FAQ for UK Solicitors
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-white/80">
-          Answers on UK business valuation expert witnesses — fees, CPR Part 35,
+          Answers on UK business valuation expert witnesses - fees, CPR Part 35,
           FPR Part 25, valuation methods, and instructing single joint experts.
         </p>
       </PageHero>

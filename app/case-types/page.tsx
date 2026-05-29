@@ -37,7 +37,7 @@ export default function CaseTypesHubPage() {
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-white/80">
           UK litigation and family proceedings where company value determines
-          outcome — from S994 petitions to financial remedy and insolvency.
+          outcome - from S994 petitions to financial remedy and insolvency.
         </p>
       </PageHero>
 

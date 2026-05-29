@@ -14,7 +14,7 @@ function term(
   };
 }
 
-/** Appendix C — default internal links per term */
+/** Appendix C - default internal links per term */
 export const GLOSSARY_TERMS: GlossaryTerm[] = [
   term(
     "Adjusted EBITDA",
@@ -23,7 +23,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "But-For Value",
-    "The value a business or asset would have had but for the alleged wrong — used in professional negligence and breach claims to quantify loss by comparing but-for value to actual value.",
+    "The value a business or asset would have had but for the alleged wrong - used in professional negligence and breach claims to quantify loss by comparing but-for value to actual value.",
     { href: "/case-types/professional-negligence-accountant", label: "Professional negligence valuations" },
   ),
   term(
@@ -43,7 +43,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "CPR Part 35",
-    "Civil Procedure Rules Part 35 — governs expert evidence in UK civil proceedings. Sets duties to the court, report requirements, and joint expert procedures.",
+    "Civil Procedure Rules Part 35 - governs expert evidence in UK civil proceedings. Sets duties to the court, report requirements, and joint expert procedures.",
     { href: "/qualifications", label: "CPR Part 35 qualifications" },
   ),
   term(
@@ -53,7 +53,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "Diminution in Value",
-    "The reduction in value caused by a breach, misrepresentation, or wrongful act — quantified by comparing value with and without the alleged defect.",
+    "The reduction in value caused by a breach, misrepresentation, or wrongful act - quantified by comparing value with and without the alleged defect.",
     { href: "/case-types/commercial-litigation-breach-of-warranty", label: "M&A warranty disputes" },
   ),
   term(
@@ -63,7 +63,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "EBITDA",
-    "Earnings before interest, tax, depreciation, and amortisation — a widely used proxy for operating cash generation in maintainable earnings valuations.",
+    "Earnings before interest, tax, depreciation, and amortisation - a widely used proxy for operating cash generation in maintainable earnings valuations.",
     { href: "/valuation-methods", label: "Valuation methods" },
   ),
   term(
@@ -83,17 +83,17 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "Fair Value (S994 context)",
-    "A legal valuation standard in unfair prejudice cases — typically proportionate share of whole company value without minority discount where prejudice is found.",
+    "A legal valuation standard in unfair prejudice cases - typically proportionate share of whole company value without minority discount where prejudice is found.",
     { href: "/case-types/shareholder-dispute-s994", label: "S994 fair value standard" },
   ),
   term(
     "FPR Part 25",
-    "Family Procedure Rules Part 25 — governs expert evidence in UK family proceedings including divorce financial remedy. May require court permission to instruct experts.",
+    "Family Procedure Rules Part 25 - governs expert evidence in UK family proceedings including divorce financial remedy. May require court permission to instruct experts.",
     { href: "/qualifications", label: "FPR Part 25 compliance" },
   ),
   term(
     "Going Concern Value",
-    "Value assuming the business continues trading and assets retain operational value — contrasted with break-up or forced sale value in insolvency.",
+    "Value assuming the business continues trading and assets retain operational value - contrasted with break-up or forced sale value in insolvency.",
     { href: "/case-types/insolvency-administration", label: "Insolvency valuations" },
   ),
   term(
@@ -103,17 +103,17 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "The Ikarian Reefer Duties",
-    "The foundational duty that expert witnesses owe their primary obligation to the court, not the instructing party — established in The Ikarian Reefer [1993] and codified in CPR 35 and FPR 25.",
+    "The foundational duty that expert witnesses owe their primary obligation to the court, not the instructing party - established in The Ikarian Reefer [1993] and codified in CPR 35 and FPR 25.",
     { href: "/qualifications", label: "Expert witness duties" },
   ),
   term(
     "Intangible Assets",
-    "Non-physical assets including goodwill, brands, customer relationships, patents, and trade marks — often central to valuation disputes.",
+    "Non-physical assets including goodwill, brands, customer relationships, patents, and trade marks - often central to valuation disputes.",
     { href: "/services#goodwill-intangible", label: "Intangible asset valuation" },
   ),
   term(
     "Maintainable Earnings",
-    "Normalised, sustainable earnings expected to continue — the earnings base for capitalisation of earnings and EBITDA multiple valuations.",
+    "Normalised, sustainable earnings expected to continue - the earnings base for capitalisation of earnings and EBITDA multiple valuations.",
     { href: "/valuation-methods", label: "Maintainable earnings method" },
   ),
   term(
@@ -128,7 +128,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "Normalisation Adjustments",
-    "Adjustments to reported profits to reflect maintainable earnings — removing non-recurring items, excessive owner benefits, and related party distortions.",
+    "Adjustments to reported profits to reflect maintainable earnings - removing non-recurring items, excessive owner benefits, and related party distortions.",
     { href: "/valuation-methods", label: "Valuation methods" },
   ),
   term(
@@ -148,12 +148,12 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "Terminal Value",
-    "The present value of cash flows beyond the explicit forecast period in a DCF — often calculated using Gordon Growth or exit multiples.",
+    "The present value of cash flows beyond the explicit forecast period in a DCF - often calculated using Gordon Growth or exit multiples.",
     { href: "/valuation-methods", label: "DCF methodology" },
   ),
   term(
     "Transaction at Undervalue (S238)",
-    "Insolvency Act 1986 section 238 — allows avoidance of gifts and transactions at undervalue in the relevant period before insolvency.",
+    "Insolvency Act 1986 section 238 - allows avoidance of gifts and transactions at undervalue in the relevant period before insolvency.",
     { href: "/case-types/insolvency-administration", label: "Insolvency valuations" },
   ),
   term(
@@ -163,7 +163,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   ),
   term(
     "Wrongful Trading (S214)",
-    "Insolvency Act 1986 section 214 — directors may be liable to contribute to assets if they continued trading when insolvent liquidation was unavoidable.",
+    "Insolvency Act 1986 section 214 - directors may be liable to contribute to assets if they continued trading when insolvent liquidation was unavoidable.",
     { href: "/case-types/insolvency-administration", label: "Insolvency expert witness" },
   ),
 ];

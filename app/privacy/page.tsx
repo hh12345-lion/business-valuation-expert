@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Privacy Policy | BusinessValuationExperts.co.uk",
-  description: "Privacy policy for BusinessValuationExperts.co.uk — UK GDPR compliant data handling.",
+  description: "Privacy policy for BusinessValuationExperts.co.uk - UK GDPR compliant data handling.",
   path: "/privacy",
   robots: { index: false, follow: true },
 });

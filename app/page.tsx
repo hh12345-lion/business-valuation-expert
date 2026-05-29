@@ -21,8 +21,8 @@ const stats = [
   ["Typical expert hourly rate", "£250–£600/hr", "Industry average"],
   ["Typical report completion time", "15–25 hours", "Expert Evidence International"],
   ["Guide price for draft report", "£2,250–£10,000", "Expert Evidence International"],
-  ["Court framework — civil cases", "CPR Part 35", "Civil Procedure Rules"],
-  ["Court framework — family cases", "FPR Part 25", "Family Procedure Rules"],
+  ["Court framework - civil cases", "CPR Part 35", "Civil Procedure Rules"],
+  ["Court framework - family cases", "FPR Part 25", "Family Procedure Rules"],
   ["Primary valuation methods", "DCF, Maintainable Earnings, NAV", "UK court practice"],
   ["SJE appointments available", "Yes", "CPR 35.7 / FPR 25.11"],
 ] as const;
@@ -32,7 +32,7 @@ const trustPoints = [
   "CPR Part 35 AND FPR Part 25 compliant",
   "Experience in High Court, County Court, Family Court, and arbitration",
   "Available as Single Joint Expert (SJE) or party-appointed expert (PAE)",
-  "Real M&A and transactional experience — not just academic valuation knowledge",
+  "Real M&A and transactional experience - not just academic valuation knowledge",
   "SME to mid-market expertise (£50,000 to £100M+ turnover)",
   "Sector specialists available (tech, professional practices, retail, property, manufacturing)",
 ] as const;
@@ -53,7 +53,7 @@ export default function HomePage() {
             remedy, insolvency, or commercial litigation, the value placed on a
             business can determine everything. BusinessValuationExperts.co.uk
             connects UK solicitors and barristers with qualified business
-            valuation expert witnesses — CPR Part 35 and FPR Part 25 compliant,
+            valuation expert witnesses - CPR Part 35 and FPR Part 25 compliant,
             court-ready reports.
           </p>
           <Link
@@ -138,7 +138,7 @@ export default function HomePage() {
             professional instructed to provide a court-admissible opinion on the
             value of a company or shareholding. Unlike a transaction adviser,
             the expert&apos;s primary duty is to the court under CPR Part 35 or
-            FPR Part 25 — whether appointed as a single joint expert or by one
+            FPR Part 25 - whether appointed as a single joint expert or by one
             party alone.
           </p>
           <p>

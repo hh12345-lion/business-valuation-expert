@@ -14,7 +14,7 @@ import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
 export const metadata: Metadata = buildPageMetadata({
   title: "Business Valuation Methods UK | DCF, Maintainable Earnings & NAV",
   description:
-    "The three main business valuation methods used by UK expert witnesses: discounted cash flow (DCF), maintainable earnings, and net asset value — explained for solicitors and their clients.",
+    "The three main business valuation methods used by UK expert witnesses: discounted cash flow (DCF), maintainable earnings, and net asset value - explained for solicitors and their clients.",
   path: "/valuation-methods",
 });
 
@@ -77,7 +77,7 @@ export default function ValuationMethodsPage() {
         <h2 className="text-2xl font-bold text-charcoal">The Three Primary Methods</h2>
         <Prose>
           <p className="mt-4">
-            UK courts do not prescribe a single valuation method — the appropriate
+            UK courts do not prescribe a single valuation method - the appropriate
             method depends on the type of business, the purpose of the valuation,
             and the legal context. Expert witnesses must justify their choice of
             method and demonstrate that it produces a reliable result.
@@ -97,11 +97,11 @@ export default function ValuationMethodsPage() {
             <strong>Definition:</strong> DCF values a business by projecting future
             cash flows and discounting them back to present value using a
             risk-adjusted discount rate (typically the Weighted Average Cost of
-            Capital — WACC).
+            Capital - WACC).
           </p>
           <p>
             <strong>When used:</strong> Growing, profitable companies with reliable
-            forecast data — particularly technology firms, professional services,
+            forecast data - particularly technology firms, professional services,
             and SaaS businesses.
           </p>
         </Prose>
@@ -140,7 +140,7 @@ export default function ValuationMethodsPage() {
           </p>
           <p>
             <strong>When used:</strong> Established trading companies with stable
-            earnings — traditional businesses and owner-managed SMEs.
+            earnings - traditional businesses and owner-managed SMEs.
           </p>
         </Prose>
         <MethodTable
@@ -168,7 +168,7 @@ export default function ValuationMethodsPage() {
         <Prose>
           <p className="mt-4">
             <strong>Definition:</strong> Values a business based on the value of its
-            underlying assets minus liabilities — at book value, fair value, or
+            underlying assets minus liabilities - at book value, fair value, or
             forced sale value.
           </p>
           <p>
@@ -187,11 +187,11 @@ export default function ValuationMethodsPage() {
         />
 
         <h2 className="mt-12 text-2xl font-bold text-charcoal">
-          Fair Value vs Fair Market Value — UK Legal Context
+          Fair Value vs Fair Market Value - UK Legal Context
         </h2>
         <p className="mt-4 leading-relaxed text-foreground">
           UK business valuation expert witnesses must apply the valuation standard
-          directed by the court or statute — fair market value in many commercial and
+          directed by the court or statute - fair market value in many commercial and
           tax matters, fair value in S994 unfair prejudice petitions.
         </p>
         <GeoComparisonTable
@@ -237,7 +237,7 @@ export default function ValuationMethodsPage() {
         <ul className="mt-4 list-disc space-y-3 pl-5 text-foreground">
           <li>
             <strong>Minority Discount:</strong> reduction for lack of control;
-            contested in S994 — courts often disapply where unfair prejudice is found.
+            contested in S994 - courts often disapply where unfair prejudice is found.
           </li>
           <li>
             <strong>Control Premium:</strong> uplift for majority or controlling stakes.

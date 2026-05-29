@@ -10,14 +10,14 @@ export const CASE_TYPES: ContentPage[] = [
     hubLabel: "Shareholder Dispute (S994)",
     h1: "Shareholder Dispute & S994 Petition Business Valuation Expert Witness",
     paragraphs: [
-      "Shareholder disputes under Companies Act 2006 section 994 (unfair prejudice) frequently turn on the value of the petitioner's shares. Courts order valuation at fair value — a legal standard that often differs materially from fair market value, particularly where minority discounts are disapplied because the petitioner was unfairly treated.",
+      "Shareholder disputes under Companies Act 2006 section 994 (unfair prejudice) frequently turn on the value of the petitioner's shares. Courts order valuation at fair value - a legal standard that often differs materially from fair market value, particularly where minority discounts are disapplied because the petitioner was unfairly treated.",
       "Business valuation expert witnesses in S994 proceedings analyse audited accounts, management information, and comparable transactions. They justify methodology (maintainable earnings, DCF, or NAV as appropriate), attend joint expert meetings under CPR Practice Direction 35, and prepare joint statements identifying agreed and disputed matters before trial in the High Court Chancery Division or County Court.",
       "Our network includes experts experienced in majority/minority shareholding valuations, control premiums, and the fair value debate. They produce CPR Part 35 compliant reports suitable for directions hearings, without prejudice expert meetings, and oral evidence.",
     ],
     faq: [
       {
         q: "What valuation standard applies in S994 shareholder disputes?",
-        a: "In unfair prejudice petitions under Companies Act 2006 s994, courts typically order valuation at fair value rather than fair market value. This usually means minority discounts are disapplied — the petitioner's shares are valued as a proportionate share of the whole company, reflecting the unfairness of the treatment received.",
+        a: "In unfair prejudice petitions under Companies Act 2006 s994, courts typically order valuation at fair value rather than fair market value. This usually means minority discounts are disapplied - the petitioner's shares are valued as a proportionate share of the whole company, reflecting the unfairness of the treatment received.",
       },
       {
         q: "Does a shareholder dispute need a Single Joint Expert?",
@@ -35,22 +35,22 @@ export const CASE_TYPES: ContentPage[] = [
     pageTitle:
       "Divorce Business Valuation Expert Witness UK | FPR Part 25",
     metaDescription:
-      "Business valuation expert witness divorce UK — FPR Part 25 financial remedy, personal goodwill, Form E disclosure. London & nationwide.",
+      "Business valuation expert witness divorce UK - FPR Part 25 financial remedy, personal goodwill, Form E disclosure. London & nationwide.",
     hubLabel: "Divorce / Financial Remedy",
     h1: "Divorce & Financial Remedy Business Valuation Expert Witness",
     paragraphs: [
       "When a spouse owns or controls a trading company, the business often forms the largest matrimonial asset in financial remedy proceedings. The Family Procedure Rules Part 25 governs expert evidence: in many cases the court's permission is required before a valuation expert may be instructed, and the expert's overriding duty is to the court.",
-      "Expert witnesses assess maintainable earnings, personal versus business goodwill, and realistic realisable value — not theoretical maximum figures. They work with Form E disclosure, respond to add-back arguments for excessive drawings or undisclosed income, and produce reports compliant with FPR Part 25 and Practice Direction 25A.",
+      "Expert witnesses assess maintainable earnings, personal versus business goodwill, and realistic realisable value - not theoretical maximum figures. They work with Form E disclosure, respond to add-back arguments for excessive drawings or undisclosed income, and produce reports compliant with FPR Part 25 and Practice Direction 25A.",
       "Matrimonial valuations frequently involve owner-managed SMEs, professional practices, and companies with complex capital structures. Sector-specific expertise (law firms, dental practices, technology businesses) ensures appropriate multiples and normalisation adjustments.",
     ],
     faq: [
       {
         q: "How is a business valued in divorce proceedings?",
-        a: "In financial remedy proceedings, the business is treated as a matrimonial asset. The expert applies an appropriate valuation method — typically maintainable earnings for trading businesses — and produces a report compliant with FPR Part 25. Courts focus on realistic realisable value, not theoretical maximum value.",
+        a: "In financial remedy proceedings, the business is treated as a matrimonial asset. The expert applies an appropriate valuation method - typically maintainable earnings for trading businesses - and produces a report compliant with FPR Part 25. Courts focus on realistic realisable value, not theoretical maximum value.",
       },
       {
         q: "What is personal goodwill in a divorce valuation?",
-        a: "Personal goodwill is the value attributable to the individual owner's skills, reputation, and relationships rather than the business itself. In divorce cases, courts often reduce the business value to exclude personal goodwill on the basis that it would not transfer on a sale — it is not available for distribution as a matrimonial asset.",
+        a: "Personal goodwill is the value attributable to the individual owner's skills, reputation, and relationships rather than the business itself. In divorce cases, courts often reduce the business value to exclude personal goodwill on the basis that it would not transfer on a sale - it is not available for distribution as a matrimonial asset.",
       },
     ],
     relatedLinks: [
@@ -63,11 +63,11 @@ export const CASE_TYPES: ContentPage[] = [
     slug: "partnership-dissolution",
     pageTitle: "Partnership Dissolution Business Valuation Expert Witness UK",
     metaDescription:
-      "Expert witness valuations for partnership and LLP dissolution — goodwill, restrictive covenants, equity partner interests.",
+      "Expert witness valuations for partnership and LLP dissolution - goodwill, restrictive covenants, equity partner interests.",
     hubLabel: "Partnership Dissolution",
     h1: "Partnership Dissolution Business Valuation Expert Witness",
     paragraphs: [
-      "Partnership dissolution and retirement disputes require careful valuation of goodwill, work in progress, and partner entitlements. Professional practices — law firms, accountancy firms, medical partnerships — present distinct issues around personal versus transferable goodwill and the enforceability of restrictive covenants.",
+      "Partnership dissolution and retirement disputes require careful valuation of goodwill, work in progress, and partner entitlements. Professional practices - law firms, accountancy firms, medical partnerships - present distinct issues around personal versus transferable goodwill and the enforceability of restrictive covenants.",
       "Experts review the partnership deed, profit-sharing arrangements, and salaried versus equity partner status. LLP member interests may be valued using earnings multiples or net asset approaches depending on the firm's asset base and income profile.",
       "Where partners disagree on value, expert determination clauses may apply; otherwise court-appointed or party experts produce CPR Part 35 compliant valuations for trial or settlement negotiation.",
     ],
@@ -78,7 +78,7 @@ export const CASE_TYPES: ContentPage[] = [
       },
       {
         q: "What happens when partners disagree on business value?",
-        a: "If the partnership agreement contains an expert determination clause, the matter may be referred to an independent expert — often appointed by the President of ICAEW. If no such clause exists, court proceedings may be necessary and a party-appointed or single joint expert will be instructed.",
+        a: "If the partnership agreement contains an expert determination clause, the matter may be referred to an independent expert - often appointed by the President of ICAEW. If no such clause exists, court proceedings may be necessary and a party-appointed or single joint expert will be instructed.",
       },
     ],
     relatedLinks: [
@@ -125,12 +125,12 @@ export const CASE_TYPES: ContentPage[] = [
     paragraphs: [
       "Insolvency proceedings raise distinct valuation questions: going concern value versus forced sale or break-up value, the adequacy of administrator marketing efforts, and whether antecedent transactions were at undervalue under Insolvency Act 1986 section 238.",
       "Wrongful trading claims under section 214 require evidence of the company's financial position from the date directors knew or ought to have known insolvent liquidation was unavoidable. Valuation experts establish asset values, maintainable cash flows, and quantum of contribution sought.",
-      "Preference payment and transaction avoidance claims may turn on whether consideration received was substantially less than value given — again requiring independent valuation opinion.",
+      "Preference payment and transaction avoidance claims may turn on whether consideration received was substantially less than value given - again requiring independent valuation opinion.",
     ],
     faq: [
       {
         q: "What is the difference between going concern and forced sale value?",
-        a: "Going concern value assumes the business continues to trade and its assets retain their operational value. Forced sale (or break-up) value assumes the assets are sold individually, typically at a discount. The distinction is critical in insolvency — an administrator must demonstrate they achieved the best price reasonably obtainable, which may require expert evidence on both values.",
+        a: "Going concern value assumes the business continues to trade and its assets retain their operational value. Forced sale (or break-up) value assumes the assets are sold individually, typically at a discount. The distinction is critical in insolvency - an administrator must demonstrate they achieved the best price reasonably obtainable, which may require expert evidence on both values.",
       },
       {
         q: "When is a valuation expert needed in wrongful trading claims?",
@@ -148,13 +148,13 @@ export const CASE_TYPES: ContentPage[] = [
     pageTitle:
       "HMRC Share Valuation Expert Witness UK | First-tier Tribunal (Tax)",
     metaDescription:
-      "HMRC share valuation expert witness for the First-tier Tribunal (Tax Chamber). Challenge SAV valuations — IHT, CGT, employment-related securities.",
+      "HMRC share valuation expert witness for the First-tier Tribunal (Tax Chamber). Challenge SAV valuations - IHT, CGT, employment-related securities.",
     hubLabel: "HMRC / Tax Tribunal",
     h1: "HMRC Valuation Dispute & Tax Tribunal Expert Witness",
     paragraphs: [
       "HMRC's Shares and Assets Valuation (SAV) team provides valuations for tax purposes that taxpayers and their advisers may challenge. Independent expert witnesses prepare counter-valuations for negotiation with HMRC or for hearing before the First-tier Tribunal (Tax Chamber).",
       "Common disputes include Inheritance Tax business property relief, Capital Gains Tax on private company disposals, employment-related securities under ITEPA 2003, and section 431 elections. Methodology must reflect open market value or the statutory standard applicable to each charge.",
-      "Experts combine tax law awareness with rigorous financial analysis — DCF, earnings multiples, or NAV — and explain assumptions clearly for non-specialist tribunals.",
+      "Experts combine tax law awareness with rigorous financial analysis - DCF, earnings multiples, or NAV - and explain assumptions clearly for non-specialist tribunals.",
     ],
     faq: [
       {
@@ -176,22 +176,22 @@ export const CASE_TYPES: ContentPage[] = [
     slug: "professional-negligence-accountant",
     pageTitle: "Professional Negligence Business Valuation Expert Witness UK",
     metaDescription:
-      "But-for valuations in accountant and valuer negligence claims — causation, standard of care, quantum of loss.",
+      "But-for valuations in accountant and valuer negligence claims - causation, standard of care, quantum of loss.",
     hubLabel: "Professional Negligence",
     h1: "Professional Negligence Business Valuation Expert Witness",
     paragraphs: [
-      "When a claimant alleges that an accountant or business valuer provided negligent advice — for example overvaluing an acquisition target or failing to identify material liabilities — an expert witness prepares a but-for valuation showing correct value and quantifies loss caused by the negligence.",
+      "When a claimant alleges that an accountant or business valuer provided negligent advice - for example overvaluing an acquisition target or failing to identify material liabilities - an expert witness prepares a but-for valuation showing correct value and quantifies loss caused by the negligence.",
       "The expert assesses whether the defendant's methodology, assumptions, and conclusions fell below the standard of care expected of a reasonably competent valuer, and if so, by how much. SRA and ICAEW professional standards may inform the analysis.",
       "These claims are typically litigated under CPR Part 35 in the Business and Property Courts, with parallel professional discipline proceedings possible.",
     ],
     faq: [
       {
         q: "When is a valuation expert needed in professional negligence claims?",
-        a: "When a claimant alleges that an accountant or valuer provided a negligent valuation — for example, advising on a business purchase at an overvalue, or failing to identify hidden liabilities — an expert prepares a but-for valuation showing what the correct value would have been and quantifying the loss caused by the negligence.",
+        a: "When a claimant alleges that an accountant or valuer provided a negligent valuation - for example, advising on a business purchase at an overvalue, or failing to identify hidden liabilities - an expert prepares a but-for valuation showing what the correct value would have been and quantifying the loss caused by the negligence.",
       },
       {
         q: "What standard of care applies to business valuers?",
-        a: "Business valuers must exercise the skill and care of a reasonably competent valuer in their field. In professional negligence cases, the expert witness assesses whether the defendant's methodology, assumptions, and conclusions fell below this standard — and if so, by how much.",
+        a: "Business valuers must exercise the skill and care of a reasonably competent valuer in their field. In professional negligence cases, the expert witness assesses whether the defendant's methodology, assumptions, and conclusions fell below this standard - and if so, by how much.",
       },
     ],
     relatedLinks: [
@@ -204,18 +204,18 @@ export const CASE_TYPES: ContentPage[] = [
     slug: "intellectual-property-valuation",
     pageTitle: "Intellectual Property Valuation Expert Witness UK",
     metaDescription:
-      "Patent, trade mark, and copyright valuation for litigation — relief from royalty, lost profits, brand value.",
+      "Patent, trade mark, and copyright valuation for litigation - relief from royalty, lost profits, brand value.",
     hubLabel: "IP Valuation",
     h1: "Intellectual Property Valuation Expert Witness UK",
     paragraphs: [
-      "Intellectual property disputes require valuation of patents, trade marks, copyrights, and brands — whether as standalone assets or as components of a wider business valuation in divorce, dissolution, or commercial litigation.",
+      "Intellectual property disputes require valuation of patents, trade marks, copyrights, and brands - whether as standalone assets or as components of a wider business valuation in divorce, dissolution, or commercial litigation.",
       "The relief from royalty method is widely used: it estimates the royalty payments the owner avoids by owning rather than licensing the IP, discounted to present value. Lost profits analysis may apply where infringement caused identifiable sales losses.",
       "Experts must distinguish personal IP (often non-transferable in matrimonial cases) from business-owned IP with realisable market value.",
     ],
     faq: [
       {
         q: "How is intellectual property valued for litigation?",
-        a: "The relief from royalty method is most commonly used — it values IP by estimating the royalty payments the owner avoids by owning rather than licensing the IP, discounted to present value. Lost profits analysis may also be used where infringement has caused identifiable sales losses.",
+        a: "The relief from royalty method is most commonly used - it values IP by estimating the royalty payments the owner avoids by owning rather than licensing the IP, discounted to present value. Lost profits analysis may also be used where infringement has caused identifiable sales losses.",
       },
       {
         q: "Is IP valuation different for divorce cases?",

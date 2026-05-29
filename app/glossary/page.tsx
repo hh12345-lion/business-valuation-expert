@@ -13,7 +13,7 @@ import { faqPageSchema, pageGraph } from "@/lib/schema";
 export const metadata: Metadata = buildPageMetadata({
   title: "Business Valuation Expert Witness Glossary | Key UK Legal & Finance Terms",
   description:
-    "Definitions of key business valuation and expert witness terms for UK litigation — from fair value to DCF, S994, FPR Part 25, and goodwill.",
+    "Definitions of key business valuation and expert witness terms for UK litigation - from fair value to DCF, S994, FPR Part 25, and goodwill.",
   path: "/glossary",
 });
 
@@ -45,7 +45,7 @@ export default function GlossaryPage() {
         </h1>
         <p className="mt-4 text-lg text-white/80">
           Key UK legal and finance terms for solicitors instructing valuation
-          experts — definition-first, linked to case types and methodology guides.
+          experts - definition-first, linked to case types and methodology guides.
         </p>
       </PageHero>
 
