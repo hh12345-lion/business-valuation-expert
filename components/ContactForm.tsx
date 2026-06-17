@@ -41,7 +41,6 @@ export function ContactForm() {
           phone: formatPhoneForLead(
             String(fd.get("phone_country") ?? "+44"),
             String(fd.get("phone_national") ?? ""),
-            String(fd.get("phone_other_prefix") ?? ""),
           ),
           lawFirm: String(fd.get("law_firm") ?? "").trim(),
           caseType: String(fd.get("case_type") ?? "").trim(),
@@ -144,7 +143,7 @@ export function ContactForm() {
           />
         </label>
         <label className="block min-w-0 text-sm font-medium text-charcoal sm:col-span-1">
-          Law Firm / Organisation *
+          Law Firm / Organisation (UK) *
           <input
             name="law_firm"
             required
@@ -186,16 +185,6 @@ export function ContactForm() {
               className="min-w-0 flex-1 min-h-[44px] rounded border border-border px-3 py-2 text-base text-foreground"
             />
           </div>
-          {phoneCountry === "+other" ? (
-            <input
-              name="phone_other_prefix"
-              type="text"
-              inputMode="tel"
-              placeholder="Other prefix e.g. +34"
-              aria-label="Other country calling code"
-              className="w-full min-h-[44px] rounded border border-border px-3 py-2 text-base text-foreground"
-            />
-          ) : null}
         </div>
       </div>
 

@@ -7,7 +7,9 @@ export default function NotFound() {
         <p className="text-4xl font-bold text-gold md:text-5xl">404</p>
         <h1 className="mt-4 text-3xl font-bold">Page Not Found</h1>
         <p className="mx-auto mt-4 max-w-md text-white/80">
-          The page you requested does not exist or has been moved.
+          The page you requested does not exist or has been moved. This website
+          provides UK business valuation expert witness matching for England and
+          Wales only.
         </p>
       </section>
       <section className="mx-auto max-w-5xl px-4 py-12 text-center sm:px-6">

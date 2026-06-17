@@ -3,21 +3,22 @@ import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { SeoBreadcrumbs } from "@/components/SeoBreadcrumbs";
 import { ContentSection } from "@/components/ContentSection";
+import { SITE_EMAIL, SITE_REGION, UK_SERVICE_NOTICE } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
-    "Instruct a Business Valuation Expert Witness | BusinessValuationExperts.co.uk",
+    "Instruct a UK Business Valuation Expert Witness | BusinessValuationExperts.co.uk",
   description:
-    "Submit your case details to be matched with a qualified UK business valuation expert witness. CPR Part 35 and FPR Part 25 compliant. Response within 1 business day.",
+    "United Kingdom only. Submit your case details to be matched with a qualified UK business valuation expert witness. CPR Part 35 and FPR Part 25. Response within 1 business day.",
   path: "/contact",
 });
 
 const trustPoints = [
+  "United Kingdom & England and Wales courts only",
   "CPR Part 35 & FPR Part 25 compliant",
   "SJE and party-appointed available",
-  "Response within 1 business day",
-  "All sectors covered",
+  "Response within 1 UK business day",
 ] as const;
 
 export default function ContactPage() {
@@ -31,8 +32,11 @@ export default function ContactPage() {
           ]}
         />
         <h1 className="mt-4 text-3xl font-bold text-white md:text-4xl">
-          Instruct a Business Valuation Expert Witness
+          Instruct a UK Business Valuation Expert Witness
         </h1>
+        <p className="mt-3 max-w-2xl text-sm text-white/85 sm:text-base">
+          {SITE_REGION} only. {UK_SERVICE_NOTICE}
+        </p>
       </PageHero>
 
       <ContentSection wide>
@@ -52,6 +56,15 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 border-t border-border pt-4 text-sm text-foreground">
+              Questions? Email{" "}
+              <a
+                href={`mailto:${SITE_EMAIL}`}
+                className="font-medium text-green hover:underline"
+              >
+                {SITE_EMAIL}
+              </a>
+            </p>
           </aside>
         </div>
       </ContentSection>

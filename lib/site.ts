@@ -1,6 +1,11 @@
 export const SITE_URL = "https://www.businessvaluationexperts.co.uk";
 export const SITE_NAME = "BusinessValuationExperts";
-export const SITE_EMAIL = "info@businessvaluationexperts.co.uk";
+export const SITE_EMAIL = "contact@businessvaluationexpert.co.uk";
+export const SITE_REGION = "United Kingdom";
+export const SITE_REGION_SHORT = "UK";
+/** Shown site-wide so visitors know the service is England & Wales / UK litigation only. */
+export const UK_SERVICE_NOTICE =
+  "United Kingdom only. We match UK solicitors and law firms with business valuation expert witnesses for English and Welsh courts (CPR Part 35, FPR Part 25). We do not offer services outside the UK.";
 export const LINKEDIN_URL =
   "https://www.linkedin.com/company/businessvaluationexperts";
 

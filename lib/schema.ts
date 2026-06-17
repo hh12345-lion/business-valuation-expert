@@ -15,6 +15,7 @@ export function organizationSchema(): object {
     address: {
       "@type": "PostalAddress",
       addressCountry: "GB",
+      addressRegion: "England and Wales",
     },
     areaServed: {
       "@type": "Country",

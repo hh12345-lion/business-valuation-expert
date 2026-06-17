@@ -44,17 +44,22 @@ export default function HomePage() {
 
       <section className="bg-charcoal text-white">
         <div className="mx-auto max-w-5xl px-4 py-14 md:px-6 md:py-20">
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-[2.35rem]">
+          <p className="inline-flex items-center rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gold ring-1 ring-gold/40">
+            United Kingdom only
+          </p>
+          <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-[2.35rem]">
             Business Valuation Expert Witness Services for UK Solicitors & Law
             Firms
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/80">
-            Whether your case involves a shareholder dispute, divorce financial
-            remedy, insolvency, or commercial litigation, the value placed on a
-            business can determine everything. BusinessValuationExperts.co.uk
-            connects UK solicitors and barristers with qualified business
-            valuation expert witnesses - CPR Part 35 and FPR Part 25 compliant,
-            court-ready reports.
+            This website serves solicitors and law firms in England and Wales
+            only. Whether your case involves a shareholder dispute, divorce
+            financial remedy, insolvency, or commercial litigation, the value
+            placed on a business can determine everything.
+            BusinessValuationExperts.co.uk connects UK solicitors and barristers
+            with qualified business valuation expert witnesses - CPR Part 35 and
+            FPR Part 25 compliant, court-ready reports. We do not provide expert
+            witness matching outside the United Kingdom.
           </p>
           <Link
             href="/contact"
