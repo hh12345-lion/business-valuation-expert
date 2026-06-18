@@ -5,7 +5,6 @@ import { ConsentModeBootstrap } from "@/components/cookies/ConsentModeBootstrap"
 import { CookieConsentRoot } from "@/components/cookies/CookieConsentRoot";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { UkServiceNotice } from "@/components/UkServiceNotice";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const inter = Inter({
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "United Kingdom only. Find qualified business valuation expert witnesses for UK solicitors - CPR Part 35 and FPR Part 25 compliant reports for English and Welsh litigation and family law.",
+    "Find qualified business valuation expert witnesses for UK solicitors in England and Wales. CPR Part 35 and FPR Part 25 compliant reports for litigation and family law.",
   alternates: {
     canonical: SITE_URL,
     languages: { "en-GB": SITE_URL, "x-default": SITE_URL },
@@ -50,7 +49,6 @@ export default function RootLayout({
         <ConsentModeBootstrap />
         <CookieConsentRoot>
           <SiteHeader />
-          <UkServiceNotice />
           <main className="flex flex-1 flex-col">{children}</main>
           <SiteFooter />
         </CookieConsentRoot>

@@ -3,22 +3,22 @@ import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { SeoBreadcrumbs } from "@/components/SeoBreadcrumbs";
 import { ContentSection } from "@/components/ContentSection";
-import { SITE_EMAIL, SITE_REGION, UK_SERVICE_NOTICE } from "@/lib/site";
+import { SITE_EMAIL } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
   title:
     "Instruct a UK Business Valuation Expert Witness | BusinessValuationExperts.co.uk",
   description:
-    "United Kingdom only. Submit your case details to be matched with a qualified UK business valuation expert witness. CPR Part 35 and FPR Part 25. Response within 1 business day.",
+    "Submit your case details to be matched with a qualified UK business valuation expert witness for England and Wales. CPR Part 35 and FPR Part 25. Response within 1 business day.",
   path: "/contact",
 });
 
 const trustPoints = [
-  "United Kingdom & England and Wales courts only",
+  "For solicitors and law firms in England and Wales",
   "CPR Part 35 & FPR Part 25 compliant",
   "SJE and party-appointed available",
-  "Response within 1 UK business day",
+  "Response within 1 business day",
 ] as const;
 
 export default function ContactPage() {
@@ -34,8 +34,9 @@ export default function ContactPage() {
         <h1 className="mt-4 text-3xl font-bold text-white md:text-4xl">
           Instruct a UK Business Valuation Expert Witness
         </h1>
-        <p className="mt-3 max-w-2xl text-sm text-white/85 sm:text-base">
-          {SITE_REGION} only. {UK_SERVICE_NOTICE}
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
+          For UK solicitors and law firms instructing experts in England and
+          Wales. Reports follow CPR Part 35 (civil) and FPR Part 25 (family).
         </p>
       </PageHero>
 

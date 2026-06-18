@@ -8,10 +8,9 @@ export function PageBottomCta() {
           Ready to instruct a business valuation expert witness?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-          United Kingdom only. Submit your case details and we will match you
-          with a qualified UK expert for English and Welsh proceedings - CPR
-          Part 35 and FPR Part 25 compliant. Response within one UK business
-          day.
+          Submit your case details and we will match you with a qualified expert
+          for English and Welsh proceedings under CPR Part 35 or FPR Part 25.
+          Response within one business day.
         </p>
         <Link
           href="/contact"

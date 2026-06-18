@@ -2,14 +2,28 @@ import Link from "next/link";
 import { CookieSettingsFooterLink } from "@/components/cookies/CookieSettingsFooterLink";
 import { CASE_TYPES } from "@/lib/case-types-data";
 import { SERVICES } from "@/lib/services-data";
-import { SITE_EMAIL, SITE_NAME, SITE_REGION, UK_SERVICE_NOTICE } from "@/lib/site";
+import { SITE_EMAIL, SITE_NAME, UK_SERVICE_SUMMARY } from "@/lib/site";
 
 const caseTypeFooter = CASE_TYPES.slice(0, 5);
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-charcoal text-white/80">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <p className="max-w-3xl text-sm leading-relaxed text-white/75">
+          {SITE_NAME}.co.uk is a United Kingdom service for solicitors and law
+          firms. {UK_SERVICE_SUMMARY} We are not a law firm and do not provide
+          legal advice. Email{" "}
+          <a
+            href={`mailto:${SITE_EMAIL}`}
+            className="font-medium text-gold underline-offset-2 hover:underline"
+          >
+            {SITE_EMAIL}
+          </a>
+          .
+        </p>
+      </div>
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
           <h2 className="text-sm font-semibold text-white">Services</h2>
           <ul className="mt-4 space-y-2 text-sm">
@@ -110,25 +124,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-6 sm:px-6 lg:px-8">
-        <p className="mx-auto max-w-7xl text-xs leading-relaxed text-white/70">
-          <strong className="font-semibold text-white">{SITE_REGION} only.</strong>{" "}
-          {UK_SERVICE_NOTICE}
-        </p>
-        <p className="mx-auto mt-3 max-w-7xl text-xs leading-relaxed text-white/60">
-          {SITE_NAME}.co.uk connects UK solicitors and law firms with business
-          valuation expert witnesses in England and Wales. We are not a law firm
-          and do not provide legal advice.
-        </p>
-        <p className="mx-auto mt-3 max-w-7xl text-sm text-white/80">
-          Email:{" "}
-          <a
-            href={`mailto:${SITE_EMAIL}`}
-            className="font-medium text-gold underline-offset-2 hover:underline"
-          >
-            {SITE_EMAIL}
-          </a>
-        </p>
-        <p className="mx-auto mt-3 max-w-7xl text-xs text-white/50">
+        <p className="mx-auto max-w-7xl text-xs text-white/50">
           © 2025 {SITE_NAME}. England and Wales.{" "}
           <Link href="/privacy" className="underline hover:text-white">
             Privacy
