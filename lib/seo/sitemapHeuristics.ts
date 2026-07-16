@@ -31,8 +31,14 @@ export function getSitemapMetaForPath(pathname: string): SitemapUrlMeta {
   if (pathname === "/services") {
     return { changeFrequency: "monthly", priority: 0.95 };
   }
+  if (pathname.startsWith("/services/")) {
+    return { changeFrequency: "monthly", priority: 0.85 };
+  }
   if (pathname === "/valuation-methods") {
     return { changeFrequency: "monthly", priority: 0.93 };
+  }
+  if (pathname.startsWith("/valuation-methods/")) {
+    return { changeFrequency: "monthly", priority: 0.8 };
   }
   if (pathname === "/case-types") {
     return { changeFrequency: "monthly", priority: 0.92 };

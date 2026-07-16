@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
+import { getLastmodForPath } from "@/lib/seo/contentDates";
 import { buildPublicUrlInventory } from "@/lib/seo/publicUrlInventory";
 import { getSitemapMetaForPath } from "@/lib/seo/sitemapHeuristics";
 import { SITE_URL } from "@/lib/site";
 
 export function buildAppSitemap(): MetadataRoute.Sitemap {
   const base = SITE_URL.replace(/\/$/, "");
-  const now = new Date();
   const { sitemapPaths } = buildPublicUrlInventory();
 
   return sitemapPaths.map((path) => {
@@ -13,7 +13,7 @@ export function buildAppSitemap(): MetadataRoute.Sitemap {
     const url = path === "/" ? `${base}/` : `${base}${path}`;
     return {
       url,
-      lastModified: now,
+      lastModified: getLastmodForPath(path),
       changeFrequency,
       priority,
     };

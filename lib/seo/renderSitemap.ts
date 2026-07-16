@@ -1,9 +1,6 @@
 import { buildPublicUrlInventory } from "@/lib/seo/publicUrlInventory";
+import { getLastmodForPath } from "@/lib/seo/contentDates";
 import { getSitemapMetaForPath } from "@/lib/seo/sitemapHeuristics";
-
-export function utcDateYyyyMmDd(): string {
-  return new Date().toISOString().slice(0, 10);
-}
 
 function escapeXml(s: string): string {
   return s
@@ -15,13 +12,14 @@ function escapeXml(s: string): string {
 }
 
 /** Standard sitemaps.org XML from buildPublicUrlInventory() sitemap URLs only. */
-export function renderSitemapXml(lastmod = utcDateYyyyMmDd()): string {
+export function renderSitemapXml(): string {
   const { sitemapPaths, sitemapUrls } = buildPublicUrlInventory();
 
   const body = sitemapUrls
     .map((loc, i) => {
       const path = sitemapPaths[i]!;
       const { changeFrequency, priority } = getSitemapMetaForPath(path);
+      const lastmod = getLastmodForPath(path);
       return [
         "  <url>",
         `    <loc>${escapeXml(loc)}</loc>`,

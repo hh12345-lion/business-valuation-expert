@@ -86,20 +86,28 @@ export function serviceId(fragment: string): string {
   return `${SITE_URL}/services#${fragment}`;
 }
 
+export function buildServiceSchema(service: {
+  anchor: string;
+  title: string;
+  summary: string;
+}): object {
+  return {
+    "@type": "Service",
+    "@id": serviceId(service.anchor),
+    name: service.title,
+    description: service.summary,
+    provider: { "@id": ORGANIZATION_ID },
+    areaServed: "United Kingdom",
+    serviceType: service.title,
+  };
+}
+
 export function servicesPageGraph(): object {
   return {
     "@context": "https://schema.org",
     "@graph": [
       organizationSchema(),
-      ...SERVICES.map((s) => ({
-        "@type": "Service",
-        "@id": serviceId(s.anchor),
-        name: s.title,
-        description: s.summary,
-        provider: { "@id": ORGANIZATION_ID },
-        areaServed: "United Kingdom",
-        serviceType: s.title,
-      })),
+      ...SERVICES.map((s) => buildServiceSchema(s)),
     ],
   };
 }

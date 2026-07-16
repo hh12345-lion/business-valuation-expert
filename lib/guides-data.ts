@@ -1,5 +1,4 @@
 import type { GuidePage } from "./types";
-import { SITE_URL } from "./site";
 
 export const GUIDES: GuidePage[] = [
   {
@@ -10,7 +9,7 @@ export const GUIDES: GuidePage[] = [
       "Guide for UK solicitors on business valuation in Companies Act 2006 s994 unfair prejudice petitions - fair value, minority discount, joint experts.",
     hubLabel: "Shareholder Disputes Guide",
     h1: "Business Valuation in Shareholder Disputes: S994 Petitions Explained",
-    aboutServiceId: `${SITE_URL}/services#shareholder-dispute-s994`,
+    updatedAt: "2026-07-16",
     sections: [
       {
         h2: "Introduction to S994 and valuation",
@@ -58,7 +57,7 @@ export const GUIDES: GuidePage[] = [
       "FPR Part 25 business valuation guide for financial remedy proceedings - Form E, personal goodwill, add-backs, SJE.",
     hubLabel: "Divorce Valuation Guide",
     h1: "Business Valuation in Divorce Proceedings: FPR Part 25 Guide",
-    aboutServiceId: `${SITE_URL}/services#matrimonial-divorce-valuation`,
+    updatedAt: "2026-07-16",
     sections: [
       {
         h2: "Financial remedy and business assets",
@@ -97,7 +96,7 @@ export const GUIDES: GuidePage[] = [
       "UK litigation guide comparing DCF and maintainable earnings - WACC disputes, multiple selection, judicial practice.",
     hubLabel: "DCF vs Earnings Guide",
     h1: "DCF vs Maintainable Earnings: Which Method Courts Prefer",
-    aboutServiceId: `${SITE_URL}/valuation-methods`,
+    updatedAt: "2026-07-16",
     sections: [
       {
         h2: "No single prescribed method",
@@ -136,7 +135,7 @@ export const GUIDES: GuidePage[] = [
       "CPR 35.7 and FPR 25.11 guide to Single Joint Experts in business valuation - joint instruction, written questions, pros and cons.",
     hubLabel: "SJE Guide",
     h1: "Single Joint Expert in Business Valuation: A Solicitor's Guide",
-    aboutServiceId: `${SITE_URL}/services#share-equity-valuation`,
+    updatedAt: "2026-07-16",
     sections: [
       {
         h2: "What is a Single Joint Expert?",
@@ -174,7 +173,7 @@ export const GUIDES: GuidePage[] = [
       "SAV process, IHT, CGT, employment-related securities, and First-tier Tribunal expert evidence for HMRC valuation disputes.",
     hubLabel: "HMRC Valuation Guide",
     h1: "HMRC Share Valuation Disputes: Expert Witness Guide",
-    aboutServiceId: `${SITE_URL}/services#share-equity-valuation`,
+    updatedAt: "2026-07-16",
     sections: [
       {
         h2: "Shares and Assets Valuation (SAV)",
@@ -212,7 +211,7 @@ export const GUIDES: GuidePage[] = [
       "Letter of instruction checklist for UK solicitors - scope, questions, documents, fees, CPR Part 35 and FPR Part 25.",
     hubLabel: "Letter of Instruction Guide",
     h1: "How to Draft a Letter of Instruction to a Business Valuation Expert Witness",
-    aboutServiceId: `${SITE_URL}/how-to-instruct`,
+    updatedAt: "2026-07-16",
     sections: [
       {
         h2: "Purpose of the letter",

@@ -22,11 +22,13 @@ The generator imports `buildPublicUrlInventory` from `lib/seo/publicUrlInventory
 The inventory merges:
 
 1. **Static hub pages** — `SITEMAP_STATIC_PATHS` (home, services, case-types hub, sectors, guides, FAQ, glossary, etc.).
-2. **Case type detail pages** — `/case-types/:slug` (10 slugs from `lib/site.ts`).
-3. **Sector detail pages** — `/sectors/:slug` (8 slugs).
-4. **Guide detail pages** — `/guides/:slug` (6 slugs).
+2. **Service detail pages** — `/services/:slug` (8).
+3. **Valuation method detail pages** — `/valuation-methods/:slug` (3).
+4. **Case type detail pages** — `/case-types/:slug` (10 slugs from `lib/site.ts`).
+5. **Sector detail pages** — `/sectors/:slug` (8 slugs).
+6. **Guide detail pages** — `/guides/:slug` (6 slugs).
 
-**Excluded from the sitemap** (but still routable): `/contact`, `/thank-you`, `/privacy`, `/terms` — see `NON_SITEMAP_PATHS` and `docs/SEO-ARCHITECTURE.md` §9.
+**Excluded from the sitemap** (but still routable): `/contact`, `/thank-you`, `/privacy`, `/terms`, `/cookies` — see `NON_SITEMAP_PATHS` and `docs/SEO-ARCHITECTURE.md` §9.
 
 The combined list is deduplicated, sorted, and exposed as:
 
@@ -42,9 +44,9 @@ For each URL in `sitemapUrls`, the script emits a standard [sitemaps.org](https:
 | Element | Source |
 |---------|--------|
 | `<loc>` | Absolute URL from inventory |
-| `<lastmod>` | Calendar date when generation runs (`YYYY-MM-DD` UTC) |
+| `<lastmod>` | Editorial `updatedAt` via `getLastmodForPath()` (`lib/seo/contentDates.ts`) — not build time |
 | `<changefreq>` | `getSitemapMetaForPath()` in `lib/seo/sitemapHeuristics.ts` |
-| `<priority>` | Same heuristics (e.g. home `1.0`, services `0.95`, glossary `0.75`) |
+| `<priority>` | Same heuristics (e.g. home `1.0`, `/services/*` `0.85`, `/valuation-methods/*` `0.80`) |
 
 The full document is written to `public/sitemap.xml`. The `public/` directory is created if needed.
 
@@ -65,7 +67,7 @@ Implementation: `lib/seo/renderRobots.ts` (fixed template, **not** derived from 
 
 The file is written to `public/robots.txt`.
 
-Staging / preview hosts should use `app/robots.ts` (`noindex` when `VERCEL_ENV=preview` or `NEXT_PUBLIC_STAGING=true`) in addition to any host-level rules.
+`renderRobotsTxt()` mirrors `app/robots.ts`: when `VERCEL_ENV=preview` or `NEXT_PUBLIC_STAGING=true`, it emits disallow-all instead of the production Allow template.
 
 ## Commands
 

@@ -7,7 +7,12 @@ import { SeoBreadcrumbs } from "@/components/SeoBreadcrumbs";
 import { ContentSection, Prose } from "@/components/ContentSection";
 import type { Service } from "@/lib/services-data";
 import type { ClusterLink } from "@/lib/seo/clusterLinks";
-import { breadcrumbSchema, organizationSchema } from "@/lib/schema";
+import {
+  breadcrumbSchema,
+  buildServiceSchema,
+  faqPageSchema,
+  organizationSchema,
+} from "@/lib/schema";
 
 type Props = {
   service: Service;
@@ -24,7 +29,12 @@ export function ServiceDetailLayout({ service, clusterLinks }: Props) {
   return (
     <>
       <JsonLd
-        data={[organizationSchema(), breadcrumbSchema(breadcrumbs)]}
+        data={[
+          organizationSchema(),
+          breadcrumbSchema(breadcrumbs),
+          buildServiceSchema(service),
+          faqPageSchema(service.faq),
+        ]}
       />
       <PageHero>
         <SeoBreadcrumbs
@@ -87,6 +97,18 @@ export function ServiceDetailLayout({ service, clusterLinks }: Props) {
         ) : null}
 
         <ContentClusterNav links={clusterLinks} />
+
+        <section className="mt-12 border-t border-border pt-10">
+          <h2 className="text-xl font-semibold text-charcoal">Common questions</h2>
+          <dl className="mt-6 space-y-8">
+            {service.faq.map((item) => (
+              <div key={item.q}>
+                <dt className="font-semibold text-charcoal">{item.q}</dt>
+                <dd className="mt-2 leading-relaxed text-foreground">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </ContentSection>
 
       <PageBottomCta />

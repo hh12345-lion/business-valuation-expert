@@ -24,6 +24,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "In many S994 cases, particularly in the High Court, each party appoints their own valuation expert. The experts are then required to meet, produce a joint statement identifying agreed methodology and areas of disagreement, and give evidence at trial. In lower-value cases, courts may direct a Single Joint Expert.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#shareholder-dispute-s994", label: "Shareholder dispute valuations" },
       { href: "/valuation-methods", label: "Valuation methods" },
@@ -53,6 +54,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "Personal goodwill is the value attributable to the individual owner's skills, reputation, and relationships rather than the business itself. In divorce cases, courts often reduce the business value to exclude personal goodwill on the basis that it would not transfer on a sale - it is not available for distribution as a matrimonial asset.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#matrimonial-divorce-valuation", label: "Matrimonial valuations" },
       { href: "/guides/divorce-business-valuation-guide", label: "Divorce valuation guide" },
@@ -81,6 +83,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "If the partnership agreement contains an expert determination clause, the matter may be referred to an independent expert - often appointed by the President of ICAEW. If no such clause exists, court proceedings may be necessary and a party-appointed or single joint expert will be instructed.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#partnership-llp", label: "Partnership & LLP valuations" },
       { href: "/sectors/professional-practices", label: "Professional practices" },
@@ -109,6 +112,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "The expert calculates the difference between what the business was worth with the warranty being true (the warranted value) and what it was actually worth at completion. This requires both a factual reconstruction of the position and an application of the appropriate valuation methodology.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#share-equity-valuation", label: "Share & equity valuation" },
       { href: "/valuation-methods", label: "Valuation methods" },
@@ -137,6 +141,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "In wrongful trading proceedings under Insolvency Act 1986 s214, the court determines from what date the directors knew or ought to have known there was no reasonable prospect of avoiding insolvent liquidation. A valuation expert may be needed to establish the company's financial position at that date and the quantum of the contribution sought.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#insolvency-administration", label: "Insolvency valuations" },
       { href: "/valuation-methods", label: "NAV and going concern methods" },
@@ -166,6 +171,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "Inheritance Tax (business property relief disputes and open market value of shares); Capital Gains Tax on disposal of private company shares; Employment Related Securities (restricted shares, options, growth shares); and corporate transactions where HMRC challenges the value placed on shares or goodwill.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/guides/hmrc-share-valuation-disputes", label: "HMRC share valuation guide" },
       { href: "/services#share-equity-valuation", label: "Share valuation services" },
@@ -194,6 +200,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "Business valuers must exercise the skill and care of a reasonably competent valuer in their field. In professional negligence cases, the expert witness assesses whether the defendant's methodology, assumptions, and conclusions fell below this standard - and if so, by how much.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/qualifications", label: "Expert qualifications" },
       { href: "/glossary", label: "But-for value" },
@@ -222,6 +229,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "In financial remedy proceedings, IP owned by a business is part of the business valuation. However, IP owned personally by a spouse (e.g. copyright in creative works) may need to be valued separately. The expert must assess whether the IP has realisable market value and whether that value is personal or transferable.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#intellectual-property-valuation", label: "IP valuation services" },
       { href: "/sectors/creative-media-ip-businesses", label: "Creative & media businesses" },
@@ -251,6 +259,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "Directors owe fiduciary duties to the company, not directly to shareholders. However, in an MBO, courts have scrutinised whether the process was fair and whether the price reflected genuine value. Expert valuation evidence is central to any claim that shareholders were disadvantaged by a low-priced MBO.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/case-types/shareholder-dispute-s994", label: "Shareholder disputes" },
       { href: "/services#share-equity-valuation", label: "Share valuation" },
@@ -279,6 +288,7 @@ export const CASE_TYPES: ContentPage[] = [
         a: "The Upper Tribunal (Lands Chamber) is the specialist tribunal for disputed compensation in compulsory purchase and other land-related disputes. Business valuation expert witnesses give evidence there on goodwill, loss of profits, and the capital value of extinguished businesses.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#goodwill-intangible", label: "Goodwill valuation" },
       { href: "/sectors/retail-hospitality-leisure", label: "Retail & hospitality" },

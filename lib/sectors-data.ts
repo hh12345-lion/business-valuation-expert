@@ -34,6 +34,7 @@ export const SECTORS: ContentPage[] = [
         notes: "Party experts often disagree on forecast assumptions",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/valuation-methods", label: "DCF methodology" },
       { href: "/case-types/shareholder-dispute-s994", label: "Shareholder disputes" },
@@ -79,6 +80,7 @@ export const SECTORS: ContentPage[] = [
         notes: "WIP, regulatory constraints; often no simple multiple",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/case-types/partnership-dissolution", label: "Partnership dissolution" },
       { href: "/case-types/divorce-financial-remedy", label: "Divorce valuations" },
@@ -119,6 +121,7 @@ export const SECTORS: ContentPage[] = [
         notes: "COVID-era earnings require normalisation in litigation",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/case-types/compulsory-purchase-goodwill", label: "Compulsory purchase" },
       { href: "/valuation-methods", label: "Maintainable earnings" },
@@ -159,6 +162,7 @@ export const SECTORS: ContentPage[] = [
         notes: "Tax treatment differs from investment holding",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/valuation-methods", label: "NAV methodology" },
       { href: "/qualifications", label: "RICS qualifications" },
@@ -199,6 +203,7 @@ export const SECTORS: ContentPage[] = [
         notes: "Customer concentration reduces multiple",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/valuation-methods", label: "Valuation methods" },
       { href: "/case-types/insolvency-administration", label: "Insolvency" },
@@ -239,6 +244,7 @@ export const SECTORS: ContentPage[] = [
         notes: "Client retention and regulatory transfer key issues",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#share-equity-valuation", label: "Share valuation" },
       { href: "/case-types/commercial-litigation-breach-of-warranty", label: "M&A disputes" },
@@ -279,6 +285,7 @@ export const SECTORS: ContentPage[] = [
         notes: "GMS/PMS contract transfer risk affects value",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/sectors/professional-practices", label: "Professional practices" },
       { href: "/case-types/divorce-financial-remedy", label: "Divorce valuations" },
@@ -319,6 +326,7 @@ export const SECTORS: ContentPage[] = [
         notes: "Talent dependency often reduces marketable value",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/services#intellectual-property-valuation", label: "IP valuation" },
       { href: "/case-types/intellectual-property-valuation", label: "IP litigation" },

@@ -31,6 +31,7 @@ export const VALUATION_METHODS: ContentPage[] = [
         a: "Common disputes include revenue growth rates, EBITDA margins, terminal growth or exit multiples, WACC components, and the bridge from enterprise value to equity. Joint expert meetings under CPR PD35 often focus on these inputs.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/valuation-methods", label: "All valuation methods" },
       { href: "/sectors/technology-saas-digital-businesses", label: "Technology / SaaS valuations" },
@@ -59,6 +60,7 @@ export const VALUATION_METHODS: ContentPage[] = [
         a: "Multiples may be drawn from listed comparables, private transaction databases, and sector-specific expert witness experience. The expert must explain why the chosen multiple is appropriate for the subject company.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/valuation-methods", label: "All valuation methods" },
       { href: "/sectors/professional-practices", label: "Professional practice valuations" },
@@ -86,6 +88,7 @@ export const VALUATION_METHODS: ContentPage[] = [
         a: "Pure NAV is asset-based; goodwill may be added separately where a going concern is justified. Experts must state whether the conclusion is on a break-up or going concern basis.",
       },
     ],
+    updatedAt: "2026-07-16",
     relatedLinks: [
       { href: "/valuation-methods", label: "All valuation methods" },
       { href: "/sectors/property-companies", label: "Property company valuations" },

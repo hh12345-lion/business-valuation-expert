@@ -52,7 +52,10 @@ export default async function GuidePage({
     { name: guide.hubLabel, path: `/guides/${slug}` },
   ];
 
-  const aboutId = GUIDE_ABOUT_SERVICE[slug] ?? guide.aboutServiceId;
+  const aboutId = GUIDE_ABOUT_SERVICE[slug];
+  if (!aboutId) {
+    throw new Error(`Missing GUIDE_ABOUT_SERVICE mapping for guide: ${slug}`);
+  }
 
   return (
     <>

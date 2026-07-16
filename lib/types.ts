@@ -9,6 +9,8 @@ export type ContentPage = {
   paragraphs: string[];
   faq: FaqItem[];
   relatedLinks: { href: string; label: string }[];
+  /** Editorial date for sitemap lastmod (YYYY-MM-DD). Update when copy changes. */
+  updatedAt: string;
   sectorMultiples?: SectorMultipleRow[];
 };
 
@@ -18,8 +20,13 @@ export type GuidePage = {
   metaDescription: string;
   hubLabel: string;
   h1: string;
-  aboutServiceId: string;
-  sections: { h2: string; paragraphs: string[]; h3?: { title: string; paragraphs: string[] }[] }[];
+  sections: {
+    h2: string;
+    paragraphs: string[];
+    h3?: { title: string; paragraphs: string[] }[];
+  }[];
+  /** Editorial date for sitemap lastmod (YYYY-MM-DD). Update when copy changes. */
+  updatedAt: string;
 };
 
 export type GlossaryTerm = {

@@ -25,7 +25,7 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
-          <h2 className="text-sm font-semibold text-white">Services</h2>
+          <p className="text-sm font-semibold text-white">Services</p>
           <ul className="mt-4 space-y-2 text-sm">
             {SERVICES.map((s) => (
               <li key={s.id}>
@@ -40,7 +40,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="text-sm font-semibold text-white">Case Types</h2>
+          <p className="text-sm font-semibold text-white">Case Types</p>
           <ul className="mt-4 space-y-2 text-sm">
             {caseTypeFooter.map((c) => (
               <li key={c.slug}>
@@ -60,7 +60,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="text-sm font-semibold text-white">Resources</h2>
+          <p className="text-sm font-semibold text-white">Resources</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <Link href="/guides" className="hover:text-white">
@@ -95,7 +95,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="text-sm font-semibold text-white">About</h2>
+          <p className="text-sm font-semibold text-white">About</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <Link href="/experts" className="hover:text-white">

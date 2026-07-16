@@ -1,6 +1,6 @@
 export const SITE_URL = "https://www.businessvaluationexperts.co.uk";
 export const SITE_NAME = "BusinessValuationExperts";
-export const SITE_EMAIL = "contact@businessvaluationexpert.co.uk";
+export const SITE_EMAIL = "contact@businessvaluationexperts.co.uk";
 export const SITE_REGION = "United Kingdom";
 /** Natural prose for footer and page copy (not displayed as a banner). */
 export const UK_SERVICE_SUMMARY =

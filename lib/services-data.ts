@@ -1,3 +1,5 @@
+import type { FaqItem } from "@/lib/types";
+
 export type ServicePhase = {
   phase: string;
   whatWeDo: string;
@@ -11,6 +13,9 @@ export type Service = {
   summary: string;
   content: string;
   phases: ServicePhase[];
+  faq: FaqItem[];
+  /** Editorial date for sitemap lastmod (YYYY-MM-DD). Update when copy changes. */
+  updatedAt: string;
   caseTypeLink?: { href: string; label: string };
 };
 
@@ -45,6 +50,17 @@ export const SERVICES: Service[] = [
         deliverable: "Court-ready report",
       },
     ],
+    faq: [
+      {
+        q: "When do solicitors instruct a share and equity valuation expert witness?",
+        a: "Typically for shareholder disputes, HMRC share valuation challenges, M&A warranty claims, and divorce where shareholdings are material assets. Experts apply DCF, maintainable earnings, or NAV and address fair value versus fair market value, control premiums, and minority discounts.",
+      },
+      {
+        q: "What valuation methods are used for private company shares in UK litigation?",
+        a: "Maintainable earnings multiples are common for stable SMEs; DCF for growth businesses with reliable forecasts; and NAV for asset-backed or loss-making companies. The expert must justify the method against the legal standard directed by the court or tribunal.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/case-types/shareholder-dispute-s994",
       label: "Shareholder disputes (S994)",
@@ -80,6 +96,17 @@ export const SERVICES: Service[] = [
         deliverable: "Court-ready report",
       },
     ],
+    faq: [
+      {
+        q: "What is FPR Part 25 and why does it matter for divorce business valuations?",
+        a: "FPR Part 25 governs expert evidence in family proceedings. Business valuation experts in financial remedy cases must comply with Part 25 duties, address personal versus business goodwill, and produce reports the Family Court can rely on for Form E and settlement negotiations.",
+      },
+      {
+        q: "How do experts treat personal goodwill in matrimonial valuations?",
+        a: "Experts distinguish personal goodwill tied to the spouse from transferable business goodwill. Personal goodwill may be less realisable on sale, which affects the value attributed to the matrimonial asset and any add-back or income arguments.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/case-types/divorce-financial-remedy",
       label: "Divorce financial remedy",
@@ -115,6 +142,17 @@ export const SERVICES: Service[] = [
         deliverable: "Court-ready report",
       },
     ],
+    faq: [
+      {
+        q: "What is fair value in an S994 unfair prejudice petition?",
+        a: "Fair value usually means a proportionate share of the whole company without a minority discount that would reward the oppressor. The expert follows the court's directions on valuation date, basis, and whether discounts or premiums apply.",
+      },
+      {
+        q: "Do S994 valuations usually involve a single joint expert?",
+        a: "Courts often encourage joint experts or joint statements under CPR PD35 where party-appointed experts diverge. Experts meet to narrow issues on methodology, maintainable earnings, and discount rate before trial.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/case-types/shareholder-dispute-s994",
       label: "S994 petitions",
@@ -150,6 +188,17 @@ export const SERVICES: Service[] = [
         deliverable: "Court-ready report",
       },
     ],
+    faq: [
+      {
+        q: "How do UK expert witnesses value goodwill and intangibles?",
+        a: "Approaches include earnings capitalisation, relief from royalty, and cost-based methods depending on whether the asset is brand, customer relationships, or personal goodwill. The choice must fit the dispute context and available evidence.",
+      },
+      {
+        q: "Why does personal versus business goodwill matter in litigation?",
+        a: "Personal goodwill may not transfer with a sale of the business, which affects realisable value in divorce, partnership dissolution, and HMRC disputes. Experts evidence the split with client concentration, key-person risk, and restrictive covenant analysis.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/case-types/partnership-dissolution",
       label: "Partnership dissolution",
@@ -185,6 +234,17 @@ export const SERVICES: Service[] = [
         deliverable: "Court-ready report",
       },
     ],
+    faq: [
+      {
+        q: "Which methods are used for IP valuation in UK court proceedings?",
+        a: "Relief from royalty and lost profits are the most common. Experts may also use comparable licence evidence and, where appropriate, cost or market approaches for brands and copyrights.",
+      },
+      {
+        q: "When is IP valuation needed outside pure IP infringement claims?",
+        a: "IP is often valued as a business asset in divorce, partnership dissolution, insolvency, and M&A warranty disputes where ownership or contribution of patents, trade marks, or copyright is contested.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/case-types/intellectual-property-valuation",
       label: "IP litigation",
@@ -220,6 +280,17 @@ export const SERVICES: Service[] = [
         deliverable: "Court-ready report",
       },
     ],
+    faq: [
+      {
+        q: "What is the difference between going concern and break-up value?",
+        a: "Going concern assumes the business continues as a trading entity; break-up (or forced sale) value assumes assets are realised in insolvency. Wrongful trading and transaction avoidance claims often require both perspectives at key dates.",
+      },
+      {
+        q: "How do expert witnesses support wrongful trading claims?",
+        a: "Experts reconstruct the financial position when directors knew or ought to have known there was no reasonable prospect of avoiding insolvent liquidation, and quantify the increase in net deficiency attributable to continued trading.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/case-types/insolvency-administration",
       label: "Insolvency proceedings",
@@ -255,6 +326,17 @@ export const SERVICES: Service[] = [
         deliverable: "Court-ready report",
       },
     ],
+    faq: [
+      {
+        q: "How are partnership and LLP interests valued on retirement or expulsion?",
+        a: "Experts review the partnership or LLP agreement, normalise drawings and firm earnings, and apply practice-specific multiples or agreed formulae. Restrictive covenants and goodwill allocation often drive disputes.",
+      },
+      {
+        q: "Do salaried and equity partners require different valuation approaches?",
+        a: "Yes. Equity partners typically hold a capital and profit share that is valued; salaried partners may have limited equity rights. The deed terms and practice accounts determine what is actually transferable.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/case-types/partnership-dissolution",
       label: "Partnership dissolution",
@@ -290,6 +372,17 @@ export const SERVICES: Service[] = [
         deliverable: "Determination report",
       },
     ],
+    faq: [
+      {
+        q: "What is expert determination and how does it differ from court litigation?",
+        a: "Expert determination is a contractual process where parties appoint an independent valuer whose decision is binding or non-binding under the agreement. It is usually faster and narrower in scope than CPR Part 35 court proceedings.",
+      },
+      {
+        q: "When do shareholders' agreements require expert determination?",
+        a: "Many agreements and ICAEW appointment schemes require determination for deadlock, leaver provisions, or price-setting on share transfers. The expert's mandate and methodology are defined by the determination clause.",
+      },
+    ],
+    updatedAt: "2026-07-16",
     caseTypeLink: {
       href: "/how-to-instruct",
       label: "How to instruct",

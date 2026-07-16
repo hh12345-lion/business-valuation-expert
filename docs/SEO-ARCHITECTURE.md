@@ -380,7 +380,7 @@ relatedLinks?: { label: string; href: string }[];
   "@id": "https://www.businessvaluationexperts.co.uk/#organization",
   "name": "BusinessValuationExperts",
   "url": "https://www.businessvaluationexperts.co.uk",
-  "email": "info@businessvaluationexperts.co.uk",
+  "email": "contact@businessvaluationexperts.co.uk",
   "addressCountry": "GB",
   "areaServed": "United Kingdom"
 }
@@ -443,17 +443,21 @@ Emit `FAQPage` JSON-LD on:
 | `/glossary` | 30+ terms (definition-first; optional FAQPage from term list) |
 | `/case-types/[slug]` | 2 FAQs per case type (×10) |
 | `/sectors/[slug]` | 2 FAQs per sector (×8) |
+| `/valuation-methods/[slug]` | 2 FAQs per method (×3) |
+| `/services/[slug]` | 2 FAQs per service (×8) |
 
-### Article `about` / `aboutServiceId` mapping
+### Article `about` mapping
 
-| Guide slug | `about` Service `@id` |
-|------------|----------------------|
+Live Article schema uses **`lib/guide-about.ts` → `GUIDE_ABOUT_SERVICE` only** (no duplicate field on guide data).
+
+| Guide slug | `about` Service / Org `@id` |
+|------------|------------------------------|
 | `shareholder-disputes-valuation-guide` | `#shareholder-dispute-s994` |
 | `divorce-business-valuation-guide` | `#matrimonial-divorce-valuation` |
 | `dcf-maintainable-earnings-expert-guide` | `#share-equity-valuation` |
-| `single-joint-expert-business-valuation` | Organization + multiple services (cross-cutting) |
+| `single-joint-expert-business-valuation` | Organization (`#organization`) |
 | `hmrc-share-valuation-disputes` | `#share-equity-valuation` |
-| `instructing-expert-witness-letter` | `#organization` (process; not tied to one service) |
+| `instructing-expert-witness-letter` | Organization (`#organization`) |
 
 ### Page → schema template matrix
 
@@ -461,10 +465,12 @@ Emit `FAQPage` JSON-LD on:
 |-------|---------------|
 | `/` | `@graph`: Organization, ProfessionalService, WebSite (+ SearchAction optional) |
 | `/services` | `@graph`: Organization, Service ×8 |
+| `/services/[slug]` | Organization, Service (same `@id` as hub fragment), BreadcrumbList, FAQPage |
 | `/guides/[slug]` | Organization, Article, BreadcrumbList |
 | `/experts` | `@graph`: Organization, Person ×3 |
 | `/case-types/[slug]` | Organization, BreadcrumbList, FAQPage |
 | `/sectors/[slug]` | Organization, BreadcrumbList, FAQPage |
+| `/valuation-methods/[slug]` | Organization, BreadcrumbList, FAQPage |
 | `/faq` | Organization, FAQPage, BreadcrumbList |
 | `/glossary` | Organization, BreadcrumbList, FAQPage (recommended) |
 | `/valuation-methods`, static utility | Organization, BreadcrumbList |
@@ -665,9 +671,11 @@ BING_SITE_VERIFICATION=
 
 ## Appendix A: Full URL Inventory
 
-**Total indexable paths:** 45 (17 static/hub + 10 case-types + 8 sectors + 6 guides + 4 utility excluded from sitemap but routable)
+**Total sitemap paths:** 48 (13 static hubs + 8 services + 3 valuation methods + 10 case-types + 8 sectors + 6 guides).
 
-### Static & hub pages (17)
+**Excluded from sitemap but routable:** `/contact`, `/thank-you`, `/privacy`, `/terms`, `/cookies`.
+
+### Static & hub pages (13 in sitemap)
 
 | URL | Sitemap priority | Index? |
 |-----|------------------|--------|
@@ -688,18 +696,19 @@ BING_SITE_VERIFICATION=
 | `/thank-you` | — | noindex |
 | `/privacy` | — | noindex |
 | `/terms` | — | noindex |
+| `/cookies` | — | noindex |
 
-### Dynamic pages (28)
+### Dynamic pages (35 in sitemap)
 
-| Pattern | Count |
-|---------|-------|
-| `/case-types/{slug}` | 10 |
-| `/sectors/{slug}` | 8 |
-| `/guides/{slug}` | 6 |
+| Pattern | Count | Priority |
+|---------|-------|----------|
+| `/services/{slug}` | 8 | 0.85 |
+| `/valuation-methods/{slug}` | 3 | 0.80 |
+| `/case-types/{slug}` | 10 | 0.88 |
+| `/sectors/{slug}` | 8 | 0.86 |
+| `/guides/{slug}` | 6 | 0.80 |
 
-**Service fragments** (not separate sitemap URLs; linked from `/services`):
-
-`#share-equity-valuation`, `#matrimonial-divorce-valuation`, `#shareholder-dispute-s994`, `#goodwill-intangible`, `#intellectual-property-valuation`, `#insolvency-administration`, `#partnership-llp`, `#expert-determination`
+Service fragment IDs on `/services#{anchor}` remain the canonical Service schema `@id` (detail pages reuse the same `@id`).
 
 ---
 

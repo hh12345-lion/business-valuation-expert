@@ -78,6 +78,18 @@ function verifyPublicRobots(): void {
     process.exit(1);
   }
 
+  const isStaging =
+    process.env.VERCEL_ENV === "preview" ||
+    process.env.NEXT_PUBLIC_STAGING === "true";
+
+  if (isStaging) {
+    if (!onDisk.includes("Disallow: /")) {
+      console.error("staging robots.txt must Disallow: /");
+      process.exit(1);
+    }
+    return;
+  }
+
   const origin = SITE_URL.replace(/\/$/, "");
   if (!onDisk.includes(`Sitemap: ${origin}/sitemap.xml`)) {
     console.error(`robots.txt must declare Sitemap: ${origin}/sitemap.xml`);
