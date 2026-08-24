@@ -21,12 +21,23 @@ export function renderOgCard(input: {
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          background: "#1C2B3A",
+          position: "relative",
+          background: "#0B1524",
           color: "#fff",
-          fontFamily: "system-ui, sans-serif",
+          fontFamily: "Georgia, ui-serif, serif",
         }}
       >
-        <div style={{ fontSize: 28, color: "#B8860B", marginBottom: 16 }}>
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: 12,
+            background: "#D9480F",
+          }}
+        />
+        <div style={{ fontSize: 28, color: "#0B6E99", marginBottom: 16 }}>
           {input.eyebrow}
         </div>
         <div style={{ fontSize: 48, fontWeight: 700, lineHeight: 1.15 }}>

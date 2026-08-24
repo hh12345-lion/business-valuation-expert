@@ -17,7 +17,7 @@ export function ContentSection({
   return (
     <section
       id={id}
-      className={`py-12 md:py-16 ${alt ? "bg-muted" : "bg-white"} ${className}`}
+      className={`py-12 md:py-16 ${alt ? "bg-muted/70" : "bg-panel/90"} ${className}`}
     >
       <div
         className={`mx-auto min-w-0 px-4 sm:px-6 lg:px-8 ${

@@ -139,7 +139,7 @@ export function ContactForm() {
             name="full_name"
             required
             autoComplete="name"
-            className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+            className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none focus:ring-1 focus:ring-green"
           />
         </label>
         <label className="block min-w-0 text-sm font-medium text-charcoal sm:col-span-1">
@@ -148,7 +148,7 @@ export function ContactForm() {
             name="law_firm"
             required
             autoComplete="organization"
-            className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+            className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none focus:ring-1 focus:ring-green"
           />
         </label>
         <label className="block min-w-0 text-sm font-medium text-charcoal sm:col-span-1">
@@ -158,7 +158,7 @@ export function ContactForm() {
             type="email"
             required
             autoComplete="email"
-            className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+            className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none focus:ring-1 focus:ring-green"
           />
         </label>
         <div className="min-w-0 space-y-2 sm:col-span-1">
@@ -169,7 +169,7 @@ export function ContactForm() {
               aria-label="Country calling code"
               value={phoneCountry}
               onChange={(ev) => setPhoneCountry(ev.target.value)}
-              className="w-full min-h-[44px] shrink-0 rounded border border-border px-2 py-2 text-base text-foreground sm:max-w-[9rem]"
+              className="w-full min-h-[44px] shrink-0 border border-border bg-panel px-2 py-2 text-base text-foreground focus:border-green focus:outline-none sm:max-w-[9rem]"
             >
               {PHONE_COUNTRY_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -182,7 +182,7 @@ export function ContactForm() {
               type="tel"
               autoComplete="tel-national"
               placeholder="National number"
-              className="min-w-0 flex-1 min-h-[44px] rounded border border-border px-3 py-2 text-base text-foreground"
+              className="min-w-0 flex-1 min-h-[44px] border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none focus:ring-1 focus:ring-green"
             />
           </div>
         </div>
@@ -192,7 +192,7 @@ export function ContactForm() {
         Case Type
         <select
           name="case_type"
-          className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+          className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none"
         >
           <option value="Shareholder Dispute (S994)">Shareholder Dispute (S994)</option>
           <option value="Divorce / Financial Remedy">Divorce / Financial Remedy</option>
@@ -214,7 +214,7 @@ export function ContactForm() {
         Sector
         <select
           name="sector"
-          className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+          className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none"
         >
           <option value="Technology / SaaS">Technology / SaaS</option>
           <option value="Professional Practice">Professional Practice</option>
@@ -237,7 +237,7 @@ export function ContactForm() {
           Legal framework
           <select
             name="legal_framework"
-            className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+            className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none"
           >
             <option value="CPR Part 35 (civil)">CPR Part 35 (civil)</option>
             <option value="FPR Part 25 (family)">FPR Part 25 (family)</option>
@@ -250,7 +250,7 @@ export function ContactForm() {
           SJE or party-appointed
           <select
             name="expert_type"
-            className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+            className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none"
           >
             <option value="SJE">SJE</option>
             <option value="Party-appointed">Party-appointed</option>
@@ -264,7 +264,7 @@ export function ContactForm() {
           Business turnover range
           <select
             name="turnover"
-            className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+            className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none"
           >
             <option value="Under £1M">Under £1M</option>
             <option value="£1M–£5M">£1M–£5M</option>
@@ -279,7 +279,7 @@ export function ContactForm() {
           <input
             name="deadline"
             type="date"
-            className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+            className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none focus:ring-1 focus:ring-green"
           />
         </label>
       </div>
@@ -289,7 +289,7 @@ export function ContactForm() {
         <textarea
           name="case_description"
           rows={5}
-          className="mt-1 w-full max-w-full resize-y rounded border border-border px-3 py-2 text-base text-foreground"
+          className="mt-1 w-full max-w-full resize-y border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none focus:ring-1 focus:ring-green"
         />
       </label>
 
@@ -297,7 +297,7 @@ export function ContactForm() {
         Urgency
         <select
           name="urgency"
-          className="mt-1 w-full min-h-[44px] max-w-full rounded border border-border px-3 py-2 text-base text-foreground"
+          className="mt-1 w-full min-h-[44px] max-w-full border border-border bg-panel px-3 py-2 text-base text-foreground focus:border-green focus:outline-none"
         >
           <option value="Urgent">Urgent</option>
           <option value="2 weeks">2 weeks</option>
@@ -309,7 +309,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex min-h-[44px] w-full min-w-0 items-center justify-center rounded bg-green px-6 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-green/90 disabled:opacity-60 sm:w-auto"
+        className="inline-flex min-h-[44px] w-full min-w-0 items-center justify-center border-2 border-charcoal bg-charcoal px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white transition hover:border-green hover:bg-green disabled:opacity-60 sm:w-auto"
       >
         {pending ? "Submitting…" : "Instruct an Expert Witness"}
       </button>

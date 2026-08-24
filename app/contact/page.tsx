@@ -31,7 +31,7 @@ export default function ContactPage() {
             { name: "Contact", href: "/contact" },
           ]}
         />
-        <h1 className="mt-4 text-3xl font-bold text-white md:text-4xl">
+        <h1 className="mt-4 font-display text-3xl font-semibold text-white md:text-4xl">
           Instruct a UK Business Valuation Expert Witness
         </h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">
@@ -45,8 +45,10 @@ export default function ContactPage() {
           <div className="min-w-0 lg:col-span-2">
             <ContactForm />
           </div>
-          <aside className="min-w-0 rounded-lg border border-border bg-muted p-5 sm:p-6 lg:sticky lg:top-24 lg:self-start">
-            <h2 className="text-lg font-semibold text-charcoal">Why instruct via us</h2>
+          <aside className="min-w-0 border border-border border-l-4 border-l-green bg-muted/80 p-5 sm:p-6 lg:sticky lg:top-6 lg:self-start">
+            <h2 className="font-display text-lg font-semibold text-charcoal">
+              Why instruct via us
+            </h2>
             <ul className="mt-4 space-y-3 text-sm text-foreground">
               {trustPoints.map((p) => (
                 <li key={p} className="flex gap-2">

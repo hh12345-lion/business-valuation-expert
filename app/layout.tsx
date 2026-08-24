@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { ConsentModeBootstrap } from "@/components/cookies/ConsentModeBootstrap";
 import { CookieConsentRoot } from "@/components/cookies/CookieConsentRoot";
@@ -7,10 +7,18 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-const inter = Inter({
+const plex = IBM_Plex_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-plex",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["600", "700"],
+  variable: "--font-source-serif",
 });
 
 export const metadata: Metadata = {
@@ -44,7 +52,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${inter.variable} h-full scroll-smooth`}>
+    <html
+      lang="en-GB"
+      className={`${plex.variable} ${sourceSerif.variable} h-full scroll-smooth`}
+    >
       <body className="flex min-h-full min-w-0 flex-col overflow-x-clip font-sans antialiased text-foreground">
         <ConsentModeBootstrap />
         <CookieConsentRoot>

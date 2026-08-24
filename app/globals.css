@@ -1,15 +1,22 @@
 @import "tailwindcss";
 
+/*
+  Distinct “valuation ledger” system — cool paper, midnight ink, ember signal.
+  Intentionally unlike sister brands (cream/sage/terracotta, teal/copper,
+  brass/cream, slate/teal).
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #374151;
-  --charcoal: #1c2b3a;
-  --green: #1b5e20;
-  --gold: #b8860b;
-  --muted: #f8f9fa;
-  --border: #e2e8f0;
-  --heading: #1c2b3a;
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --background: #eef2f7;
+  --foreground: #3d4a5c;
+  --charcoal: #0b1524;
+  --green: #d9480f;
+  --gold: #0b6e99;
+  --muted: #e2e8f1;
+  --border: #c5d0de;
+  --heading: #0b1524;
+  --panel: #f7f9fc;
+  --shadow-card: 0 1px 0 rgba(11, 21, 36, 0.06), 0 10px 28px rgba(11, 21, 36, 0.07);
+  --grid-line: rgba(11, 110, 153, 0.07);
 }
 
 @theme inline {
@@ -21,19 +28,30 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-heading: var(--heading);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-panel: var(--panel);
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-source-serif), ui-serif, Georgia, serif;
   --shadow-card: var(--shadow-card);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    linear-gradient(180deg, rgba(247, 249, 252, 0.92) 0%, transparent 42%),
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   min-width: 0;
   overflow-x: clip;
 }
 
-/* Responsive media site-wide */
+.font-display {
+  font-family: var(--font-display);
+}
+
 img,
 video {
   max-width: 100%;
@@ -61,8 +79,49 @@ html {
   animation: bve-cookie-in 0.4s ease-out forwards;
 }
 
+@keyframes bve-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-bve-fade-up {
+  animation: bve-fade-up 0.55s ease-out both;
+}
+
+.animate-bve-fade-up-delay {
+  animation: bve-fade-up 0.55s ease-out 0.12s both;
+}
+
+.animate-bve-fade-up-delay-2 {
+  animation: bve-fade-up 0.55s ease-out 0.24s both;
+}
+
+@keyframes bve-rule-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-bve-rule-in {
+  transform-origin: left center;
+  animation: bve-rule-in 0.7s ease-out 0.1s both;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-bve-cookie-in {
+  .animate-bve-cookie-in,
+  .animate-bve-fade-up,
+  .animate-bve-fade-up-delay,
+  .animate-bve-fade-up-delay-2,
+  .animate-bve-rule-in {
     animation: none;
   }
 }

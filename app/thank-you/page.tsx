@@ -15,7 +15,9 @@ export default function ThankYouPage() {
   return (
     <>
       <PageHero>
-        <h1 className="text-3xl font-bold text-white md:text-4xl">Thank You</h1>
+        <h1 className="font-display text-3xl font-semibold text-white md:text-4xl">
+          Thank You
+        </h1>
         <p className="mt-4 text-lg text-white/80">
           Your instruction request has been received. We will respond within one
           business day.
@@ -24,7 +26,7 @@ export default function ThankYouPage() {
       <ContentSection>
         <Link
           href="/"
-          className="inline-flex min-h-[44px] items-center rounded bg-green px-6 py-3 text-sm font-semibold text-white"
+          className="inline-flex min-h-[44px] items-center border-2 border-charcoal bg-charcoal px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white transition hover:border-green hover:bg-green"
         >
           Return to Homepage
         </Link>
