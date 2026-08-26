@@ -11,8 +11,8 @@ import { PUBLIC_SITE_URL, SITE_EMAIL } from "@/lib/site";
 const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
 
 /**
- * Contact intake: POST JSON to `/api/submit-lead` (fullName, email, phone).
- * Webhook forwards four keys to Lead_notification_url. Formspree fallback on 503.
+ * Instruct intake: POST JSON to `/api/submit-lead` (fullName, email, phone, formType).
+ * Webhook forwards five keys to Lead_notification_url. Formspree fallback on 503.
  */
 export function ContactForm() {
   const router = useRouter();
@@ -42,6 +42,7 @@ export function ContactForm() {
             String(fd.get("phone_country") ?? "+44"),
             String(fd.get("phone_national") ?? ""),
           ),
+          formType: "instruct" as const,
           lawFirm: String(fd.get("law_firm") ?? "").trim(),
           caseType: String(fd.get("case_type") ?? "").trim(),
           sector: String(fd.get("sector") ?? "").trim(),

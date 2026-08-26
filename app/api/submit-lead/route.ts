@@ -1,22 +1,13 @@
 import { NextResponse } from "next/server";
 import { isGoogleSheetsConfigured } from "@/lib/google-sheets";
 import { appendLeadToGoogleSheet, type LeadFields } from "@/lib/lead-sheet";
-
-/** Must match `BRAND_NAME` in netlify/functions/submit-lead.js */
-const BRAND_NAME = "BusinessValuationExperts";
-
-function getLeadWebhookUrl(): string {
-  return (
-    process.env.Lead_notification_url ||
-    process.env.LEAD_NOTIFICATION_URL ||
-    ""
-  );
-}
+import { BRAND_NAME, notifyLeadWebhook } from "@/lib/leadNotification";
 
 type LeadBody = {
   fullName?: unknown;
   email?: unknown;
   phone?: unknown;
+  formType?: unknown;
   lawFirm?: unknown;
   caseType?: unknown;
   sector?: unknown;
@@ -53,8 +44,8 @@ export async function OPTIONS() {
 }
 
 /**
- * Webhook: four keys to n8n. Google Sheets: full contact row (non-blocking after webhook).
- * Sheets-only mode when webhook env is unset (local dev).
+ * Webhook: five keys to n8n (via notifyLeadWebhook). Google Sheets: full row
+ * after webhook (non-blocking on sheet errors). Sheets-only when webhook unset.
  */
 export async function POST(request: Request) {
   let body: LeadBody;
@@ -73,10 +64,11 @@ export async function POST(request: Request) {
     );
   }
 
-  const webhookUrl = getLeadWebhookUrl();
+  const webhookUrl =
+    process.env.Lead_notification_url || process.env.LEAD_NOTIFICATION_URL;
   const sheetsConfigured = isGoogleSheetsConfigured();
 
-  if (!webhookUrl && !sheetsConfigured) {
+  if (!webhookUrl?.trim() && !sheetsConfigured) {
     return NextResponse.json(
       {
         error: "WEBHOOK_MISSING",
@@ -87,29 +79,22 @@ export async function POST(request: Request) {
     );
   }
 
-  if (webhookUrl) {
-    const outbound = {
-      "Full Name": lead.fullName,
-      Email: lead.email,
-      "Phone Number": lead.phone,
-      "Brand name": BRAND_NAME,
-    };
+  if (webhookUrl?.trim()) {
+    const result = await notifyLeadWebhook({
+      fullName: lead.fullName,
+      email: lead.email,
+      phone: lead.phone,
+    });
 
-    let upstream: Response;
-    try {
-      upstream = await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(outbound),
-      });
-    } catch {
-      return NextResponse.json({ error: "WEBHOOK_UNREACHABLE" }, { status: 502 });
-    }
-
-    if (!upstream.ok) {
+    if ("error" in result) {
       return NextResponse.json(
-        { error: "WEBHOOK_REJECTED", status: upstream.status },
-        { status: 502 },
+        {
+          error: result.error,
+          ...(result.upstreamStatus != null
+            ? { status: result.upstreamStatus }
+            : {}),
+        },
+        { status: result.status },
       );
     }
 

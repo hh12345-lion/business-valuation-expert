@@ -7,8 +7,8 @@
 [functions]
   directory = "netlify/functions"
 
-# POST /api/submit-lead is handled by Next.js (webhook + Google Sheets).
-# Uncomment only for function-only deploys without app/api/submit-lead/route.ts:
+# POST /api/submit-lead: Next.js route (webhook + Google Sheets) via @netlify/plugin-nextjs.
+# Uncomment redirect for function-only deploys without app/api/submit-lead/route.ts:
 # [[redirects]]
 #   from = "/api/submit-lead"
 #   to = "/.netlify/functions/submit-lead"

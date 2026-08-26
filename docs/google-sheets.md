@@ -46,7 +46,7 @@ npx tsx scripts/test-sheets.ts
 
 ## Behaviour
 
-- If **`Lead_notification_url`** is set: POST webhook (four keys) first, then append full row to Sheets.
+- If **`Lead_notification_url`** is set: POST webhook (five keys, including **`domain`**) first, then append full row to Sheets.
 - If **only Google Sheets** env vars are set: save to the sheet directly (local dev).
 - If **neither** is configured: the form returns an error.
 

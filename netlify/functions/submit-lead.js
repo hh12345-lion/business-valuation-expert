@@ -1,16 +1,33 @@
 /**
  * POST /api/submit-lead (via netlify.toml redirect) → n8n / webhook.
- * Env: Lead_notification_url or LEAD_NOTIFICATION_URL.
- * Outbound JSON uses exactly four keys (see project docs).
+ * Env: Lead_notification_url or LEAD_NOTIFICATION_URL, NEXT_PUBLIC_SITE_URL.
+ * Outbound JSON uses exactly five keys (see Lead_notification_setup.md).
  */
-const BRAND_NAME = "BusinessValuationExperts";
+const BRAND_NAME = "Business Valuation Expert";
+
+const FALLBACK_DOMAIN = "businessvaluationexperts.co.uk";
 
 function getLeadWebhookUrl() {
   return (
     process.env.Lead_notification_url ||
     process.env.LEAD_NOTIFICATION_URL ||
     ""
-  );
+  ).trim();
+}
+
+function getSiteDomain() {
+  const raw = (process.env.NEXT_PUBLIC_SITE_URL || "").trim();
+  if (!raw) return FALLBACK_DOMAIN;
+
+  try {
+    return new URL(raw).hostname.replace(/^www\./i, "");
+  } catch {
+    return raw
+      .replace(/^https?:\/\//i, "")
+      .replace(/^www\./i, "")
+      .split("/")[0]
+      .replace(/\/$/, "") || FALLBACK_DOMAIN;
+  }
 }
 
 exports.handler = async (event) => {
@@ -73,6 +90,7 @@ exports.handler = async (event) => {
     Email: email,
     "Phone Number": phone,
     "Brand name": BRAND_NAME,
+    domain: getSiteDomain(),
   };
 
   let res;

@@ -61,7 +61,7 @@ async function test() {
     deadline: "2026-06-01",
     caseDescription: "Test row from scripts/test-sheets.ts",
     urgency: "2 weeks",
-    brandName: "BusinessValuationExperts",
+    brandName: "Business Valuation Expert",
   });
 
   try {
