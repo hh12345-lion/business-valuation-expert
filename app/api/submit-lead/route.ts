@@ -21,6 +21,9 @@ type LeadBody = {
 
 function parseLeadBody(body: LeadBody): LeadFields {
   const str = (v: unknown) => (v != null ? String(v).trim() : "");
+  const formTypeRaw = str(body.formType).toLowerCase();
+  const formType =
+    formTypeRaw === "contact" ? "contact" : formTypeRaw === "instruct" ? "instruct" : "instruct";
 
   return {
     fullName: str(body.fullName),
@@ -36,7 +39,25 @@ function parseLeadBody(body: LeadBody): LeadFields {
     caseDescription: str(body.caseDescription),
     urgency: str(body.urgency),
     brandName: BRAND_NAME,
+    formType,
   };
+}
+
+async function softFailAppendSheet(lead: LeadFields, context: string): Promise<void> {
+  if (!isGoogleSheetsConfigured()) return;
+
+  try {
+    await appendLeadToGoogleSheet(lead);
+  } catch (error: unknown) {
+    const err = error as { message?: string; code?: number };
+    console.error("Google Sheets error:", {
+      context,
+      message: err?.message,
+      code: err?.code,
+      spreadsheetId: `${process.env.GOOGLE_SHEET_ID?.slice(0, 8)}...`,
+      timestamp: new Date().toISOString(),
+    });
+  }
 }
 
 export async function OPTIONS() {
@@ -44,8 +65,8 @@ export async function OPTIONS() {
 }
 
 /**
- * Webhook: five keys to n8n (via notifyLeadWebhook). Google Sheets: full row
- * after webhook (non-blocking on sheet errors). Sheets-only when webhook unset.
+ * Webhook is the primary lead path (notifyLeadWebhook).
+ * Sheets: one shared GOOGLE_SHEET_TAB_NAME + Form Type; soft-fail only.
  */
 export async function POST(request: Request) {
   let body: LeadBody;
@@ -98,34 +119,14 @@ export async function POST(request: Request) {
       );
     }
 
-    if (sheetsConfigured) {
-      try {
-        await appendLeadToGoogleSheet(lead);
-      } catch (error: unknown) {
-        const err = error as { message?: string; code?: number };
-        console.error("Google Sheets error:", {
-          message: err?.message,
-          code: err?.code,
-          spreadsheetId: `${process.env.GOOGLE_SHEET_ID?.slice(0, 8)}...`,
-          timestamp: new Date().toISOString(),
-        });
-      }
-    }
+    // Soft-fail Sheets — never fail the user after webhook success.
+    await softFailAppendSheet(lead, "submit-lead");
 
     return NextResponse.json({ ok: true });
   }
 
-  try {
-    await appendLeadToGoogleSheet(lead);
-    return NextResponse.json({ ok: true });
-  } catch (error: unknown) {
-    const err = error as { message?: string; code?: number };
-    console.error("Google Sheets error:", {
-      message: err?.message,
-      code: err?.code,
-      spreadsheetId: `${process.env.GOOGLE_SHEET_ID?.slice(0, 8)}...`,
-      timestamp: new Date().toISOString(),
-    });
-    return NextResponse.json({ error: "SHEETS_WRITE_FAILED" }, { status: 500 });
-  }
+  // Sheets-only fallback (local/dev): soft-fail so missing/broken Sheets
+  // does not hard-block when webhook is unset; still attempt write.
+  await softFailAppendSheet(lead, "submit-lead-sheets-only");
+  return NextResponse.json({ ok: true });
 }

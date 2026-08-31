@@ -62,6 +62,7 @@ async function test() {
     caseDescription: "Test row from scripts/test-sheets.ts",
     urgency: "2 weeks",
     brandName: "Business Valuation Expert",
+    formType: "instruct",
   });
 
   try {
