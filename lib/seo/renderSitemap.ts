@@ -26,6 +26,7 @@ export function renderSitemapXml(): string {
         `    <lastmod>${lastmod}</lastmod>`,
         `    <changefreq>${changeFrequency}</changefreq>`,
         `    <priority>${priority.toFixed(2)}</priority>`,
+        "  </url>",
       ].join("\n");
     })
     .join("\n");
