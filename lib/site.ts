@@ -1,4 +1,5 @@
-export const SITE_URL = "https://www.businessvaluationexperts.co.uk";
+/** Apex canonical — www redirects here; sitemap/canonicals must not use www. */
+export const SITE_URL = "https://businessvaluationexperts.co.uk";
 export const SITE_NAME = "BusinessValuationExperts";
 export const SITE_EMAIL = "contact@businessvaluationexperts.co.uk";
 export const SITE_REGION = "United Kingdom";
@@ -8,8 +9,23 @@ export const UK_SERVICE_SUMMARY =
 export const LINKEDIN_URL =
   "https://www.linkedin.com/company/businessvaluationexperts";
 
-export const PUBLIC_SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? SITE_URL;
+export const PUBLIC_SITE_URL = (() => {
+  const raw = (process.env.NEXT_PUBLIC_SITE_URL ?? SITE_URL).trim();
+  try {
+    const u = new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`);
+    if (
+      u.hostname === "localhost" ||
+      u.hostname === "127.0.0.1" ||
+      u.hostname.endsWith(".netlify.app")
+    ) {
+      return SITE_URL;
+    }
+    u.hostname = u.hostname.replace(/^www\./i, "");
+    return u.origin.replace(/\/$/, "");
+  } catch {
+    return SITE_URL;
+  }
+})();
 
 export const guideSlugs = [
   "shareholder-disputes-valuation-guide",
