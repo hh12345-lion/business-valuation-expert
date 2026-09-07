@@ -1,4 +1,5 @@
 import {
+  blogSlugs,
   caseTypeSlugs,
   guideSlugs,
   sectorSlugs,
@@ -20,6 +21,7 @@ export const SITEMAP_STATIC_PATHS = [
   "/fees",
   "/faq",
   "/guides",
+  "/blog",
   "/experts",
   "/glossary",
 ] as const;
@@ -67,6 +69,7 @@ export function buildPublicUrlInventory(): PublicUrlInventory {
     ...caseTypeSlugs.map((slug) => `/case-types/${slug}`),
     ...sectorSlugs.map((slug) => `/sectors/${slug}`),
     ...guideSlugs.map((slug) => `/guides/${slug}`),
+    ...blogSlugs.map((slug) => `/blog/${slug}`),
   ]);
 
   const allPaths = uniqueSorted([...sitemapPaths, ...NON_SITEMAP_PATHS]);

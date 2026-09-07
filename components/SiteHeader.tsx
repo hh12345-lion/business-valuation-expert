@@ -25,6 +25,7 @@ function pathActive(pathname: string | null, href: string): boolean {
 function resourcesActive(pathname: string | null): boolean {
   if (!pathname) return false;
   return (
+    pathname.startsWith("/blog") ||
     pathname.startsWith("/guides") ||
     pathname === "/how-to-instruct" ||
     pathname === "/qualifications"

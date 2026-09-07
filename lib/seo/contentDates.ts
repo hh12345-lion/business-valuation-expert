@@ -19,6 +19,7 @@ const detailDates = new Map<string, string>([
   ...CASE_TYPES.map((c) => [`/case-types/${c.slug}`, c.updatedAt] as const),
   ...SECTORS.map((s) => [`/sectors/${s.slug}`, s.updatedAt] as const),
   ...GUIDES.map((g) => [`/guides/${g.slug}`, g.updatedAt] as const),
+  ["/blog/business-valuation-checklist-documents-expert-needs", "2026-09-07"],
 ]);
 
 const hubDates = new Map<string, string>(

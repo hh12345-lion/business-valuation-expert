@@ -27,6 +27,10 @@ export const PUBLIC_SITE_URL = (() => {
   }
 })();
 
+export const blogSlugs = [
+  "business-valuation-checklist-documents-expert-needs",
+] as const;
+
 export const guideSlugs = [
   "shareholder-disputes-valuation-guide",
   "divorce-business-valuation-guide",
@@ -91,6 +95,7 @@ export const sectorNavItems = SECTORS.map((s) => ({
 }));
 
 export const resourcesNavItems = [
+  { href: "/blog", label: "Blog" },
   { href: "/guides", label: "Guides" },
   { href: "/qualifications", label: "Qualifications" },
   { href: "/how-to-instruct", label: "How to Instruct" },

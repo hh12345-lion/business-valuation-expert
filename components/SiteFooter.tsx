@@ -108,6 +108,14 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <Link
+                  href="/blog"
+                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/guides"
                   className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
                 >

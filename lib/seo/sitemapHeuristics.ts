@@ -68,6 +68,12 @@ export function getSitemapMetaForPath(pathname: string): SitemapUrlMeta {
   if (pathname.startsWith("/guides/")) {
     return { changeFrequency: "monthly", priority: 0.8 };
   }
+  if (pathname === "/blog") {
+    return { changeFrequency: "weekly", priority: 0.86 };
+  }
+  if (pathname.startsWith("/blog/")) {
+    return { changeFrequency: "monthly", priority: 0.8 };
+  }
   if (pathname === "/experts") {
     return { changeFrequency: "monthly", priority: 0.8 };
   }
