@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CookieSettingsFooterLink } from "@/components/cookies/CookieSettingsFooterLink";
+import { PreferredSourceButton } from "@/components/PreferredSourceButton";
 import { CASE_TYPES } from "@/lib/case-types-data";
 import { SERVICES } from "@/lib/services-data";
 import { SITE_EMAIL, SITE_NAME, UK_SERVICE_SUMMARY } from "@/lib/site";
@@ -177,6 +178,8 @@ export function SiteFooter() {
             </Link>
             <span aria-hidden>·</span>
             <CookieSettingsFooterLink />
+            <span aria-hidden>·</span>
+            <PreferredSourceButton theme="dark" />
           </p>
         </div>
       </div>
