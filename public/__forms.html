@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form detection</title>
+  </head>
+  <body>
+    <!-- Static blueprint for Netlify form detection. Not linked in the UI. -->
+    <form name="instruct" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="instruct" />
+      <input name="bot-field" />
+      <input type="text" name="full_name" />
+      <input type="text" name="law_firm" />
+      <input type="email" name="email" />
+      <select name="phone_country"></select>
+      <input type="tel" name="phone_national" />
+      <select name="case_type">
+        <option value="Shareholder Dispute (S994)">Shareholder Dispute (S994)</option>
+        <option value="Divorce / Financial Remedy">Divorce / Financial Remedy</option>
+        <option value="Partnership Dissolution">Partnership Dissolution</option>
+        <option value="Commercial Litigation / M&amp;A Dispute">Commercial Litigation / M&amp;A Dispute</option>
+        <option value="Insolvency / Administration">Insolvency / Administration</option>
+        <option value="HMRC / Tax Tribunal">HMRC / Tax Tribunal</option>
+        <option value="Professional Negligence">Professional Negligence</option>
+        <option value="IP Valuation">IP Valuation</option>
+        <option value="MBO Dispute">MBO Dispute</option>
+        <option value="Compulsory Purchase">Compulsory Purchase</option>
+        <option value="Other">Other</option>
+      </select>
+      <select name="sector">
+        <option value="Technology / SaaS">Technology / SaaS</option>
+        <option value="Professional Practice">Professional Practice</option>
+        <option value="Retail / Hospitality / Leisure">Retail / Hospitality / Leisure</option>
+        <option value="Property Company">Property Company</option>
+        <option value="Manufacturing / Distribution">Manufacturing / Distribution</option>
+        <option value="Financial Services">Financial Services</option>
+        <option value="Healthcare / Dental">Healthcare / Dental</option>
+        <option value="Creative / Media">Creative / Media</option>
+        <option value="Other / Multiple">Other / Multiple</option>
+      </select>
+      <select name="legal_framework">
+        <option value="CPR Part 35 (civil)">CPR Part 35 (civil)</option>
+        <option value="FPR Part 25 (family)">FPR Part 25 (family)</option>
+        <option value="Arbitration">Arbitration</option>
+        <option value="Tax Tribunal">Tax Tribunal</option>
+        <option value="Not sure">Not sure</option>
+      </select>
+      <select name="expert_type">
+        <option value="SJE">SJE</option>
+        <option value="Party-appointed">Party-appointed</option>
+        <option value="Not decided">Not decided</option>
+      </select>
+      <select name="turnover">
+        <option value="Under £1M">Under £1M</option>
+        <option value="£1M–£5M">£1M–£5M</option>
+        <option value="£5M–£25M">£5M–£25M</option>
+        <option value="£25M–£100M">£25M–£100M</option>
+        <option value="Over £100M">Over £100M</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+      <input type="date" name="deadline" />
+      <textarea name="case_description"></textarea>
+      <select name="urgency">
+        <option value="Urgent">Urgent</option>
+        <option value="2 weeks">2 weeks</option>
+        <option value="1 month">1 month</option>
+        <option value="Planning ahead">Planning ahead</option>
+      </select>
+    </form>
+  </body>
+</html>

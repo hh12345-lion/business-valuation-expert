@@ -7,6 +7,7 @@ import {
   PHONE_COUNTRY_OPTIONS,
 } from "@/lib/phone";
 import { PUBLIC_SITE_URL, SITE_EMAIL } from "@/lib/site";
+import { submitNetlifyForm } from "@/lib/submitNetlifyForm";
 
 const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
 
@@ -26,6 +27,9 @@ export function ContactForm() {
 
   return (
     <form
+      name="instruct"
+      method="POST"
+      action="/__forms.html"
       className="min-w-0 space-y-5"
       onSubmit={async (e) => {
         e.preventDefault();
@@ -68,6 +72,25 @@ export function ContactForm() {
           });
 
           if (apiRes.ok) {
+            try {
+              await submitNetlifyForm("instruct", {
+                full_name: payload.fullName,
+                law_firm: payload.lawFirm,
+                email: payload.email,
+                phone_country: String(fd.get("phone_country") ?? "+44"),
+                phone_national: String(fd.get("phone_national") ?? "").trim() || undefined,
+                case_type: payload.caseType,
+                sector: payload.sector,
+                legal_framework: payload.legalFramework,
+                expert_type: payload.expertType,
+                turnover: payload.turnover,
+                deadline: payload.deadline || undefined,
+                case_description: payload.caseDescription || undefined,
+                urgency: payload.urgency,
+              });
+            } catch {
+              // Webhook already stored the enquiry; don't block the visitor.
+            }
             router.push("/thank-you");
             return;
           }
@@ -95,6 +118,25 @@ export function ContactForm() {
               headers: { Accept: "application/json" },
             });
             if (fsRes.ok) {
+              try {
+                await submitNetlifyForm("instruct", {
+                  full_name: payload.fullName,
+                  law_firm: payload.lawFirm,
+                  email: payload.email,
+                  phone_country: String(fd.get("phone_country") ?? "+44"),
+                  phone_national: String(fd.get("phone_national") ?? "").trim() || undefined,
+                  case_type: payload.caseType,
+                  sector: payload.sector,
+                  legal_framework: payload.legalFramework,
+                  expert_type: payload.expertType,
+                  turnover: payload.turnover,
+                  deadline: payload.deadline || undefined,
+                  case_description: payload.caseDescription || undefined,
+                  urgency: payload.urgency,
+                });
+              } catch {
+                // Formspree already stored the enquiry; don't block the visitor.
+              }
               router.push("/thank-you");
               return;
             }
@@ -124,6 +166,12 @@ export function ContactForm() {
         }
       }}
     >
+      <input type="hidden" name="form-name" value="instruct" />
+      <p className="hidden" aria-hidden="true">
+        <label>
+          Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
       {error ? (
         <div
           role="alert"
