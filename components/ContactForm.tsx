@@ -56,6 +56,7 @@ export function ContactForm() {
           deadline: String(fd.get("deadline") ?? "").trim(),
           caseDescription: String(fd.get("case_description") ?? "").trim(),
           urgency: String(fd.get("urgency") ?? "").trim(),
+          message: String(fd.get("case_description") ?? "").trim(),
         };
 
         if (!payload.fullName || !payload.email) {
