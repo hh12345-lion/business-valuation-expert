@@ -1,4 +1,4 @@
-# SEO Full Context — businessvaluationexperts.co.uk
+# SEO Full Context: businessvaluationexperts.co.uk
 
 > **Purpose:** Complete SEO inventory for AI agents (Claude/Cursor). Read this file first when changing SEO, content, metadata, schema, sitemap, robots, internal links, or keywords.  
 > **Related docs:** `docs/SEO-ARCHITECTURE.md` (strategy source of truth), `docs/SITEMAP-AND-ROBOTS.md` (pipeline).  
@@ -114,8 +114,8 @@ html lang="en-GB"
 ### Assets
 
 - Favicon / apple-icon / web manifest: `app/icon.tsx`, `app/apple-icon.tsx`, `app/manifest.ts` (navy/gold)
-- Almost no in-body content `<img>` / `next/image` → almost no image alt text beyond OG (deferred — see §14 / P3.2)
-- No blog; content SEO surface = guides + hubs + detail pages (deferred — P3.1)
+- Almost no in-body content `<img>` / `next/image` → almost no image alt text beyond OG (deferred, see §14 / P3.2)
+- No blog; content SEO surface = guides + hubs + detail pages (deferred, P3.1)
 
 ---
 
@@ -130,7 +130,7 @@ html lang="en-GB"
 - E-E-A-T: ACA/FCA/CFA/CVA, CPR/FPR, *Ikarian Reefer*, sector experience, citeable methodology tables.
 - Leverage `.co.uk` in copy where natural.
 
-### Tier 1 — Transactional
+### Tier 1: Transactional
 
 | Keyword | Primary URL | Secondary URLs |
 |---------|-------------|----------------|
@@ -145,7 +145,7 @@ html lang="en-GB"
 | FPR Part 25 business valuation expert | `/services#matrimonial-divorce-valuation` | divorce case-type + glossary |
 | CPR Part 35 business valuation expert | `/services` | what-is, qualifications, glossary |
 
-### Tier 2 — Informational
+### Tier 2: Informational
 
 | Keyword | Primary URL |
 |---------|-------------|
@@ -160,7 +160,7 @@ html lang="en-GB"
 | what is personal goodwill in divorce UK | `/case-types/divorce-financial-remedy` |
 | HMRC share valuation dispute expert | `/guides/hmrc-share-valuation-disputes` |
 
-### Tier 3 — Long-tail / sector
+### Tier 3: Long-tail / sector
 
 | Keyword | Primary URL |
 |---------|-------------|
@@ -202,7 +202,7 @@ Cluster link maps are implemented in `lib/seo/clusterLinks.ts` and rendered via 
 
 ---
 
-## 4. Complete page inventory — metadata + H1
+## 4. Complete page inventory: metadata + H1
 
 **Browser title note:** Values below are the `title` passed to `buildPageMetadata`. Final document title is usually `{title} | BusinessValuationExperts` via the root template (unless the title already includes brand-style suffixes).
 
@@ -231,7 +231,7 @@ Cluster link maps are implemented in `lib/seo/clusterLinks.ts` and rendered via 
 
 Root layout default description (fallback): *Find qualified business valuation expert witnesses for UK solicitors in England and Wales. CPR Part 35 and FPR Part 25 compliant reports for litigation and family law.*
 
-### 4.2 Services — `/services/{slug}`
+### 4.2 Services: `/services/{slug}`
 
 Metadata: `title = "{service.title} | Business Valuation Expert Witness UK"`, `description = service.summary`.  
 H1 on detail pages comes from service title via `ServiceDetailLayout`.  
@@ -250,7 +250,7 @@ Sitemap priority: **0.85** (`/services/` prefix in `getSitemapMetaForPath`).
 
 Also linked as fragments on `/services#{anchor}` from homepage and clusters. Nav labels strip parentheticals via `serviceNavLabel()`.
 
-### 4.3 Valuation methods — `/valuation-methods/{slug}`
+### 4.3 Valuation methods: `/valuation-methods/{slug}`
 
 Sitemap priority: **0.80** (`/valuation-methods/` prefix in `getSitemapMetaForPath`).
 
@@ -262,7 +262,7 @@ Sitemap priority: **0.80** (`/valuation-methods/` prefix in `getSitemapMetaForPa
 
 Hub page also uses in-page anchors `#dcf`, `#maintainable-earnings`, `#nav` (see `VALUATION_METHODS_CLUSTER`).
 
-### 4.4 Case types — `/case-types/{slug}` (priority 0.88)
+### 4.4 Case types: `/case-types/{slug}` (priority 0.88)
 
 | Slug | pageTitle | metaDescription | H1 | hubLabel |
 |------|-----------|-----------------|----|----------|
@@ -279,7 +279,7 @@ Hub page also uses in-page anchors `#dcf`, `#maintainable-earnings`, `#nav` (see
 
 Each case type has **2 FAQs** (FAQPage schema via `DetailPageLayout`) + `relatedLinks` in data.
 
-### 4.5 Sectors — `/sectors/{slug}` (priority 0.86)
+### 4.5 Sectors: `/sectors/{slug}` (priority 0.86)
 
 | Slug | pageTitle / H1 | metaDescription | hubLabel |
 |------|----------------|-----------------|----------|
@@ -294,7 +294,7 @@ Each case type has **2 FAQs** (FAQPage schema via `DetailPageLayout`) + `related
 
 Each sector: **2 FAQs** + optional `sectorMultiples` GEO table + cluster links.
 
-### 4.6 Guides — `/guides/{slug}` (priority 0.80)
+### 4.6 Guides: `/guides/{slug}` (priority 0.80)
 
 | Slug | pageTitle / H1 | metaDescription | hubLabel | Article `about` @id (`lib/guide-about.ts`) |
 |------|----------------|-----------------|----------|--------------------------------------------|
@@ -313,7 +313,7 @@ Guides use H1 + section H2s + subsection H3s from `lib/guides-data.ts`. JSON-LD:
 
 | Pattern | Rule |
 |---------|------|
-| **H1** | Exactly one per page — hero / page title from static JSX or `page.h1` / `guide.h1` / service title |
+| **H1** | Exactly one per page, hero / page title from static JSX or `page.h1` / `guide.h1` / service title |
 | **H2** | Major sections; hub card titles; footer column titles (sitewide); ContentClusterNav “Related resources”; FAQ “Common questions” |
 | **H3** | Homepage service cards; guide subsections |
 
@@ -397,7 +397,7 @@ sameAs [LinkedIn URL]
 
 | Output | Generator | Must stay in sync |
 |--------|-----------|-------------------|
-| `app/sitemap.ts` → `/sitemap.xml` | `buildAppSitemap()` | Yes — `seo:verify` |
+| `app/sitemap.ts` → `/sitemap.xml` | `buildAppSitemap()` | Yes, `seo:verify` |
 | `public/sitemap.xml` | `scripts/generate-seo.ts` → `renderSitemapXml()` | Yes |
 | `app/robots.ts` | Next MetadataRoute | Staging-aware |
 | `public/robots.txt` | `renderRobotsTxt()` | Staging-aware (same gate as `app/robots.ts`) |
@@ -472,12 +472,12 @@ Sitemap: https://www.businessvaluationexperts.co.uk/sitemap.xml
 | Breadcrumbs UI + schema | `components/SeoBreadcrumbs.tsx` |
 | Homepage | 8 service links + `HOMEPAGE_CLUSTER` |
 
-**Anchor text rule:** descriptive destination labels only — never “click here”.
+**Anchor text rule:** descriptive destination labels only, never “click here”.
 
 ### Standard process links appended to most clusters
 
-- `/how-to-instruct` — “How to instruct a valuation expert”
-- `/contact` — “Instruct an expert witness”
+- `/how-to-instruct`, “How to instruct a valuation expert”
+- `/contact`, “Instruct an expert witness”
 - Case-type clusters also append `/glossary` hub
 
 ### Named cluster exports
@@ -492,7 +492,7 @@ Sitemap: https://www.businessvaluationexperts.co.uk/sitemap.xml
 
 ---
 
-## 9. Glossary (30 terms) — anchors + default links
+## 9. Glossary (30 terms): anchors + default links
 
 Anchor formula: `term.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")`
 
@@ -557,7 +557,7 @@ GEO rules: lead with direct answer (40–60 words); semantic `<table>` + caption
 | `GOOGLE_SITE_VERIFICATION` | GSC meta verification |
 | `BING_SITE_VERIFICATION` | Bing `msvalidate.01` |
 | `NEXT_PUBLIC_STAGING` | With Vercel preview → robots disallow all |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` / GTM / Meta / LinkedIn / Hotjar | Analytics after CMP consent — not meta SEO |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` / GTM / Meta / LinkedIn / Hotjar | Analytics after CMP consent, not meta SEO |
 
 ---
 
@@ -567,7 +567,7 @@ GEO rules: lead with direct answer (40–60 words); semantic `<table>` + caption
 |------|------|
 | `docs/SEO-ARCHITECTURE.md` | Keyword strategy, clusters, schema matrix, GEO, off-page, competitors, `.co.uk` |
 | `docs/SITEMAP-AND-ROBOTS.md` | Sitemap/robots pipeline documentation |
-| `docs/SEO-FULL-CONTEXT.md` | **This file** — full AI context dump |
+| `docs/SEO-FULL-CONTEXT.md` | **This file**, full AI context dump |
 | `lib/site.ts` | SITE_URL, names, slugs, nav |
 | `lib/seo-metadata.ts` | `buildPageMetadata` |
 | `lib/schema.ts` | Organization, FAQ, Article, Service, breadcrumbs, services graph |
@@ -634,9 +634,9 @@ ccTLD = strong UK geotargeting. Include `en-GB` + `x-default` hreflang for compl
 
 **Still open / by design:**
 
-1. **`SITE_URL` vs env:** Metadata/sitemap ignore `NEXT_PUBLIC_SITE_URL` — by design (hardcoded canonical host).
+1. **`SITE_URL` vs env:** Metadata/sitemap ignore `NEXT_PUBLIC_SITE_URL`, by design (hardcoded canonical host).
 2. **No meta keywords / no blog / almost no content images or alt text.** Blog = P3.1; imagery = P3.2.
-3. **Docs hygiene:** Prefer this file + code over stale narrative in older architecture appendix drafts when they conflict — keep Appendix A in `SEO-ARCHITECTURE.md` aligned after inventory changes.
+3. **Docs hygiene:** Prefer this file + code over stale narrative in older architecture appendix drafts when they conflict, keep Appendix A in `SEO-ARCHITECTURE.md` aligned after inventory changes.
 
 ---
 

@@ -21,19 +21,19 @@ The generator imports `buildPublicUrlInventory` from `lib/seo/publicUrlInventory
 
 The inventory merges:
 
-1. **Static hub pages** — `SITEMAP_STATIC_PATHS` (home, services, case-types hub, sectors, guides, FAQ, glossary, etc.).
-2. **Service detail pages** — `/services/:slug` (8).
-3. **Valuation method detail pages** — `/valuation-methods/:slug` (3).
-4. **Case type detail pages** — `/case-types/:slug` (10 slugs from `lib/site.ts`).
-5. **Sector detail pages** — `/sectors/:slug` (8 slugs).
-6. **Guide detail pages** — `/guides/:slug` (6 slugs).
+1. **Static hub pages**, `SITEMAP_STATIC_PATHS` (home, services, case-types hub, sectors, guides, FAQ, glossary, etc.).
+2. **Service detail pages**, `/services/:slug` (8).
+3. **Valuation method detail pages**, `/valuation-methods/:slug` (3).
+4. **Case type detail pages**, `/case-types/:slug` (10 slugs from `lib/site.ts`).
+5. **Sector detail pages**, `/sectors/:slug` (8 slugs).
+6. **Guide detail pages**, `/guides/:slug` (6 slugs).
 
-**Excluded from the sitemap** (but still routable): `/contact`, `/thank-you`, `/privacy`, `/terms`, `/cookies` — see `NON_SITEMAP_PATHS` and `docs/SEO-ARCHITECTURE.md` §9.
+**Excluded from the sitemap** (but still routable): `/contact`, `/thank-you`, `/privacy`, `/terms`, `/cookies`, see `NON_SITEMAP_PATHS` and `docs/SEO-ARCHITECTURE.md` §9.
 
 The combined list is deduplicated, sorted, and exposed as:
 
-- `sitemapPaths` / `sitemapUrls` — indexable URLs only  
-- `allPaths` / `allUrls` — includes non-sitemap legal/contact routes for route inventory checks  
+- `sitemapPaths` / `sitemapUrls`, indexable URLs only  
+- `allPaths` / `allUrls`, includes non-sitemap legal/contact routes for route inventory checks  
 
 ## Sitemap generation
 
@@ -44,7 +44,7 @@ For each URL in `sitemapUrls`, the script emits a standard [sitemaps.org](https:
 | Element | Source |
 |---------|--------|
 | `<loc>` | Absolute URL from inventory |
-| `<lastmod>` | Editorial `updatedAt` via `getLastmodForPath()` (`lib/seo/contentDates.ts`) — not build time |
+| `<lastmod>` | Editorial `updatedAt` via `getLastmodForPath()` (`lib/seo/contentDates.ts`), not build time |
 | `<changefreq>` | `getSitemapMetaForPath()` in `lib/seo/sitemapHeuristics.ts` |
 | `<priority>` | Same heuristics (e.g. home `1.0`, `/services/*` `0.85`, `/valuation-methods/*` `0.80`) |
 
@@ -92,8 +92,8 @@ Commit the updated `public/sitemap.xml` and `public/robots.txt` when URLs change
 `.github/workflows/seo-checks.yml` runs on pull requests and manual dispatch:
 
 1. `npm ci`
-2. `npm run seo:generate` — Regenerates files and catches script failures
-3. `npm run seo:verify` — Ensures `public/sitemap.xml` `<loc>` entries match `buildPublicUrlInventory().sitemapUrls` and `public/robots.txt` matches the template; also checks `app/sitemap.ts`
+2. `npm run seo:generate`, Regenerates files and catches script failures
+3. `npm run seo:verify`, Ensures `public/sitemap.xml` `<loc>` entries match `buildPublicUrlInventory().sitemapUrls` and `public/robots.txt` matches the template; also checks `app/sitemap.ts`
 
 ## Deployment (Netlify / static hosts)
 

@@ -1,22 +1,24 @@
 @import "tailwindcss";
 
 /*
-  Distinct “valuation ledger” system — cool paper, midnight ink, ember signal.
-  Intentionally unlike sister brands (cream/sage/terracotta, teal/copper,
-  brass/cream, slate/teal).
+  Brand palette: ink 1A1E1F, orange F16B12, cream EFEAE0, slate 4D5B60,
+  tan BBA793. muted, border and panel are tints of the cream and tan.
+  Token names (green, gold) are kept from the previous system so existing
+  classes keep working: green is the brand orange, gold is the brand slate.
 */
 :root {
-  --background: #eef2f7;
-  --foreground: #3d4a5c;
-  --charcoal: #0b1524;
-  --green: #d9480f;
-  --gold: #0b6e99;
-  --muted: #e2e8f1;
-  --border: #c5d0de;
-  --heading: #0b1524;
-  --panel: #f7f9fc;
-  --shadow-card: 0 1px 0 rgba(11, 21, 36, 0.06), 0 10px 28px rgba(11, 21, 36, 0.07);
-  --grid-line: rgba(11, 110, 153, 0.07);
+  --background: #efeae0;
+  --foreground: #4d5b60;
+  --charcoal: #1a1e1f;
+  --green: #f16b12;
+  --gold: #4d5b60;
+  --tan: #bba793;
+  --muted: #e6dfd2;
+  --border: #d3c8b8;
+  --heading: #1a1e1f;
+  --panel: #f7f4ee;
+  --shadow-card: 0 1px 0 rgba(26, 30, 31, 0.06), 0 10px 28px rgba(26, 30, 31, 0.08);
+  --grid-line: rgba(77, 91, 96, 0.06);
 }
 
 @theme inline {
@@ -29,15 +31,16 @@
   --color-border: var(--border);
   --color-heading: var(--heading);
   --color-panel: var(--panel);
-  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-source-serif), ui-serif, Georgia, serif;
+  --color-tan: var(--tan);
+  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
   --shadow-card: var(--shadow-card);
 }
 
 body {
   background-color: var(--background);
   background-image:
-    linear-gradient(180deg, rgba(247, 249, 252, 0.92) 0%, transparent 42%),
+    linear-gradient(180deg, rgba(247, 244, 238, 0.92) 0%, transparent 42%),
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: auto, 48px 48px, 48px 48px;
@@ -50,6 +53,63 @@ body {
 
 .font-display {
   font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Diagonal corner cut taken from the slash in the BV monogram. */
+.bve-cut {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.25rem), calc(100% - 3.25rem) 100%, 0 100%);
+}
+
+/*
+  Diagonal section break on the monogram's slash angle. The section overlaps
+  its neighbours by --bve-slash and is clipped, so their background shows in
+  the cut. Needs an opaque background.
+*/
+.bve-slash,
+.bve-slash-top {
+  --bve-slash: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.bve-slash {
+  clip-path: polygon(0 var(--bve-slash), 100% 0, 100% calc(100% - var(--bve-slash)), 0 100%);
+  margin-block: calc(var(--bve-slash) * -1);
+  padding-block: calc(var(--bve-slash) + 3rem);
+}
+
+.bve-slash-top {
+  clip-path: polygon(0 var(--bve-slash), 100% 0, 100% 100%, 0 100%);
+  margin-top: calc(var(--bve-slash) * -1);
+}
+
+@media (min-width: 768px) {
+  .bve-slash,
+  .bve-slash-top {
+    --bve-slash: 3.5rem;
+  }
+
+  .bve-slash {
+    padding-block: calc(var(--bve-slash) + 4rem);
+  }
+}
+
+/* Service ledger: the detail panel follows the hovered or focused row. */
+@media (min-width: 1024px) {
+  .bve-ledger:not(:hover):not(:focus-within) > li:first-child .bve-ledger-preview,
+  .bve-ledger > li:hover .bve-ledger-preview,
+  .bve-ledger > li:focus-within .bve-ledger-preview {
+    display: flex;
+  }
+
+  .bve-ledger:hover > li:not(:hover) .bve-ledger-preview {
+    display: none;
+  }
+}
+
+.bve-cut-sm {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.75rem), calc(100% - 0.75rem) 100%, 0 100%);
 }
 
 img,

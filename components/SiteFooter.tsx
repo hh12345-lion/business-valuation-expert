@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CookieSettingsFooterLink } from "@/components/cookies/CookieSettingsFooterLink";
 import { PreferredSourceButton } from "@/components/PreferredSourceButton";
@@ -10,17 +11,24 @@ const caseTypeFooter = CASE_TYPES.slice(0, 5);
 export function SiteFooter() {
   return (
     <footer className="mt-auto">
-      {/* Instruction band — light ledger panel, not dark 4-column charcoal */}
-      <div className="border-y-2 border-charcoal/10 bg-panel">
+      {/* Instruction band, light ledger panel, not dark 4-column charcoal */}
+      <div className="bg-charcoal">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8 lg:py-12">
-          <div className="max-w-xl border-l-4 border-green pl-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">
+          <div className="max-w-xl">
+            <Image
+              src="/brand/logo-light.svg"
+              alt={SITE_NAME}
+              width={934}
+              height={293}
+              className="w-[13.5rem]"
+            />
+            <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-green">
               Instruction desk
             </p>
-            <p className="mt-2 font-display text-2xl font-semibold leading-snug text-charcoal sm:text-[1.75rem]">
+            <p className="mt-2 font-display text-3xl font-bold leading-tight text-background sm:text-4xl">
               Match with a valuation expert witness
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-background/70">
               Confidential intake for UK solicitors. Response within one business
               day.
             </p>
@@ -28,13 +36,13 @@ export function SiteFooter() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href={`mailto:${SITE_EMAIL}`}
-              className="text-sm font-medium text-gold underline-offset-4 hover:underline"
+              className="text-sm font-medium text-background underline-offset-4 hover:underline"
             >
               {SITE_EMAIL}
             </a>
             <Link
               href="/contact"
-              className="inline-flex min-h-[44px] items-center justify-center border-2 border-charcoal bg-charcoal px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.08em] text-white transition hover:border-green hover:bg-green"
+              className="bve-cut-sm inline-flex min-h-[44px] items-center justify-center bg-green px-6 py-2.5 font-display text-sm font-bold uppercase tracking-[0.08em] text-charcoal transition hover:bg-background"
             >
               Start intake
             </Link>
@@ -43,20 +51,17 @@ export function SiteFooter() {
       </div>
 
       {/* Index grid on cool paper */}
-      <div className="bg-muted/80">
+      <div className="border-t border-background/10 bg-charcoal">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr_1fr] lg:px-8">
           <div>
-            <p className="font-display text-xl font-semibold text-charcoal">
-              {SITE_NAME}
-            </p>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-foreground">
+            <p className="max-w-sm text-sm leading-relaxed text-background/65">
               {UK_SERVICE_SUMMARY} We are not a law firm and do not provide legal
               advice.
             </p>
           </div>
 
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-green">
               Services
             </p>
             <ul className="mt-4 space-y-2 text-sm">
@@ -64,7 +69,7 @@ export function SiteFooter() {
                 <li key={s.id}>
                   <Link
                     href={`/services/${s.anchor}`}
-                    className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                    className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                   >
                     {s.title
                       .replace(/ \(.*\)$/, "")
@@ -76,7 +81,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-green">
               Case types
             </p>
             <ul className="mt-4 space-y-2 text-sm">
@@ -84,7 +89,7 @@ export function SiteFooter() {
                 <li key={c.slug}>
                   <Link
                     href={`/case-types/${c.slug}`}
-                    className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                    className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                   >
                     {c.hubLabel}
                   </Link>
@@ -102,14 +107,14 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-green">
               Browse
             </p>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <Link
                   href="/blog"
-                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                  className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                 >
                   Blog
                 </Link>
@@ -117,7 +122,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/guides"
-                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                  className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                 >
                   Solicitor guides
                 </Link>
@@ -125,7 +130,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/glossary"
-                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                  className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                 >
                   Glossary
                 </Link>
@@ -133,7 +138,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/faq"
-                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                  className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                 >
                   FAQ
                 </Link>
@@ -141,7 +146,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/fees"
-                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                  className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                 >
                   Fees guide
                 </Link>
@@ -149,7 +154,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/valuation-methods"
-                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                  className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                 >
                   Valuation methods
                 </Link>
@@ -157,7 +162,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/experts"
-                  className="inline-flex min-h-[40px] items-center text-charcoal hover:text-green"
+                  className="inline-flex min-h-[40px] items-center text-background/85 hover:text-green"
                 >
                   Our experts
                 </Link>
@@ -167,7 +172,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="bg-charcoal px-4 py-5 sm:px-6 lg:px-8">
+      <div className="border-t border-background/10 bg-charcoal px-4 py-5 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {SITE_NAME}. England and Wales.
@@ -183,6 +188,10 @@ export function SiteFooter() {
             <span aria-hidden>·</span>
             <Link href="/cookies" className="hover:text-white">
               Cookies
+            </Link>
+            <span aria-hidden>·</span>
+            <Link href="/image-credits" className="hover:text-white">
+              Image credits
             </Link>
             <span aria-hidden>·</span>
             <CookieSettingsFooterLink />

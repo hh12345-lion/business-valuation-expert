@@ -19,7 +19,7 @@ if (!status.ok) {
     console.error(
       "Create that file with GOOGLE_SERVICE_ACCOUNT_EMAIL, GOOGLE_PRIVATE_KEY, GOOGLE_SHEET_ID, and GOOGLE_SHEET_TAB_NAME.",
     );
-    console.error("Copy names from .env.example — never commit real keys.\n");
+    console.error("Copy names from .env.example, never commit real keys.\n");
   } else {
     console.error(".env.local exists but these variables are empty or missing:");
     for (const key of status.missing) {

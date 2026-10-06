@@ -6,7 +6,7 @@ import { VALUATION_METHODS } from "@/lib/valuation-methods-data";
 import { SITEMAP_STATIC_PATHS } from "@/lib/seo/publicUrlInventory";
 
 /**
- * Stable hub/static lastmod. Bump deliberately when hub copy changes —
+ * Stable hub/static lastmod. Bump deliberately when hub copy changes,
  * never set from Date.now() at generate time.
  */
 export const HUB_UPDATED_AT = "2026-07-16";

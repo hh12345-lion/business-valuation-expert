@@ -4,6 +4,7 @@ export function ContentSection({
   children,
   alt = false,
   wide = false,
+  slash = false,
   className = "",
   id,
 }: {
@@ -11,13 +12,15 @@ export function ContentSection({
   alt?: boolean;
   /** Wider container for dense layouts (e.g. contact form + sidebar). */
   wide?: boolean;
+  /** Cut the top and bottom edges on the monogram's diagonal. */
+  slash?: boolean;
   className?: string;
   id?: string;
 }) {
   return (
     <section
       id={id}
-      className={`py-12 md:py-16 ${alt ? "bg-muted/70" : "bg-panel/90"} ${className}`}
+      className={`${slash ? "bve-slash bg-muted" : `py-12 md:py-16 ${alt ? "bg-muted/70" : "bg-panel/90"}`} ${className}`}
     >
       <div
         className={`mx-auto min-w-0 px-4 sm:px-6 lg:px-8 ${

@@ -44,7 +44,7 @@ Content type: **`application/json`**.
 ### `domain` (standard across all projects)
 
 - **Key name:** always lowercase **`domain`** (not `Domain`, not `site`, not `website`).
-- **Value:** hostname only from the site’s public URL — no `https://`, no path, no trailing slash.
+- **Value:** hostname only from the site’s public URL, no `https://`, no path, no trailing slash.
 - **Strip `www.`** if present (`www.example.co.uk` → `example.co.uk`).
 - **Source:** `NEXT_PUBLIC_SITE_URL` (or equivalent) in each project’s env.
 
@@ -95,7 +95,7 @@ Contact form should fire the webhook after a successful **`/api/contact`** POST 
 2. Set **`NEXT_PUBLIC_SITE_URL`** to the live site (e.g. `https://forensicexpertwitness.co.uk`).
 3. Set **`Lead_notification_url`** to the shared n8n webhook URL.
 4. Confirm outbound JSON includes all **five keys**, especially **`domain`** spelled exactly as above.
-5. In n8n, map **`domain`** to branch, filter, or store — same field name on every site.
+5. In n8n, map **`domain`** to branch, filter, or store, same field name on every site.
 
 ### Files to copy for another project
 
@@ -126,5 +126,5 @@ fetch("/api/submit-lead", {
 |---------|--------|
 | **`BRAND_NAME`** | `Business Valuation Expert` |
 | **`domain`** (when `NEXT_PUBLIC_SITE_URL=https://www.businessvaluationexperts.co.uk`) | `businessvaluationexperts.co.uk` |
-| Contact / instruct webhook | **`/api/submit-lead`** on form submit (`formType: "instruct"`) — webhook primary |
+| Contact / instruct webhook | **`/api/submit-lead`** on form submit (`formType: "instruct"`), webhook primary |
 | Google Sheets | One shared tab (`GOOGLE_SHEET_TAB_NAME`) + **Form Type**; soft-fail after webhook |

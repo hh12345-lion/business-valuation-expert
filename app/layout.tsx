@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
+import { Urbanist, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { ConsentModeBootstrap } from "@/components/cookies/ConsentModeBootstrap";
 import { CookieConsentRoot } from "@/components/cookies/CookieConsentRoot";
@@ -7,19 +7,20 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-const plex = IBM_Plex_Sans({
+const workSans = Work_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plex",
+  variable: "--font-work-sans",
 });
 
-const sourceSerif = Source_Serif_4({
+const urbanist = Urbanist({
   subsets: ["latin"],
   display: "swap",
-  weight: ["600", "700"],
-  variable: "--font-source-serif",
+  variable: "--font-urbanist",
 });
+
+/** Render every route on the server at request time rather than at build. */
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -54,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${plex.variable} ${sourceSerif.variable} h-full scroll-smooth`}
+      className={`${workSans.variable} ${urbanist.variable} h-full scroll-smooth`}
     >
       <body className="flex min-h-full min-w-0 flex-col overflow-x-clip font-sans antialiased text-foreground">
         <ConsentModeBootstrap />

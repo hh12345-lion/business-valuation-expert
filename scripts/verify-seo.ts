@@ -34,7 +34,7 @@ function verifyPublicSitemap(): void {
   try {
     xml = readFileSync(sitemapPath, "utf8");
   } catch {
-    console.error("Missing public/sitemap.xml — run: npm run seo:generate");
+    console.error("Missing public/sitemap.xml, run: npm run seo:generate");
     process.exit(1);
     return;
   }
@@ -65,7 +65,7 @@ function verifyPublicRobots(): void {
   try {
     onDisk = readFileSync(robotsPath, "utf8");
   } catch {
-    console.error("Missing public/robots.txt — run: npm run seo:generate");
+    console.error("Missing public/robots.txt, run: npm run seo:generate");
     process.exit(1);
     return;
   }
@@ -73,7 +73,7 @@ function verifyPublicRobots(): void {
   const expected = renderRobotsTxt();
   if (onDisk !== expected) {
     console.error(
-      "public/robots.txt is out of date — run: npm run seo:generate",
+      "public/robots.txt is out of date, run: npm run seo:generate",
     );
     process.exit(1);
   }
@@ -120,7 +120,7 @@ function main(): void {
   verifyPublicSitemap();
   verifyPublicRobots();
   verifyNextSitemapRoute();
-  console.log("seo:verify OK — public/sitemap.xml, robots.txt, and app/sitemap.ts aligned.");
+  console.log("seo:verify OK, public/sitemap.xml, robots.txt, and app/sitemap.ts aligned.");
 }
 
 main();

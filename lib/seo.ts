@@ -1,7 +1,7 @@
 import { SITE_URL } from "@/lib/site";
 
 /**
- * Hostname for n8n `domain` field — no scheme, path, or `www.`
+ * Hostname for n8n `domain` field, no scheme, path, or `www.`
  * Source: NEXT_PUBLIC_SITE_URL, falling back to SITE_URL.
  */
 export function getSiteDomain(): string {

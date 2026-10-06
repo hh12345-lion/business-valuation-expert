@@ -120,7 +120,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Soft-fail Sheets — never fail the user after webhook success.
+    // Soft-fail Sheets, never fail the user after webhook success.
     await softFailAppendSheet(lead, "submit-lead");
 
     return NextResponse.json({ ok: true });

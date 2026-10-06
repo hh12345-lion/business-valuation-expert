@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BrandImage } from "@/components/BrandImage";
+import { ServiceLedger } from "@/components/ServiceLedger";
+import { ValuationRange } from "@/components/ValuationRange";
 import { ContentClusterNav } from "@/components/ContentClusterNav";
 import { PageBottomCta } from "@/components/PageBottomCta";
 import { ContentSection } from "@/components/ContentSection";
@@ -25,6 +28,12 @@ const stats = [
   ["Court framework - family cases", "FPR Part 25", "Family Procedure Rules"],
   ["Primary valuation methods", "DCF, Maintainable Earnings, NAV", "UK court practice"],
   ["SJE appointments available", "Yes", "CPR 35.7 / FPR 25.11"],
+] as const;
+
+const headlineStats = [
+  { label: "Typical expert rate", figure: "£250–£600", unit: "per hour", source: "Industry average" },
+  { label: "Typical report time", figure: "15–25", unit: "hours", source: "Expert Evidence International" },
+  { label: "Guide price, draft report", figure: "£2,250–£10k", unit: "", source: "Expert Evidence International" },
 ] as const;
 
 const trustPoints = [
@@ -77,64 +86,52 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <aside className="border border-border bg-muted/60 p-5 sm:p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
-              At a glance
-            </p>
-            <ul className="mt-4 divide-y divide-border text-sm">
-              <li className="flex justify-between gap-4 py-3">
-                <span className="text-foreground">Civil framework</span>
-                <span className="font-semibold text-charcoal">CPR Part 35</span>
-              </li>
-              <li className="flex justify-between gap-4 py-3">
-                <span className="text-foreground">Family framework</span>
-                <span className="font-semibold text-charcoal">FPR Part 25</span>
-              </li>
-              <li className="flex justify-between gap-4 py-3">
-                <span className="text-foreground">Typical rate</span>
-                <span className="font-semibold text-charcoal">£250–£600/hr</span>
-              </li>
-              <li className="flex justify-between gap-4 py-3">
-                <span className="text-foreground">SJE available</span>
-                <span className="font-semibold text-charcoal">Yes</span>
-              </li>
-            </ul>
-          </aside>
+          <div className="relative pb-10 lg:pb-0">
+            <BrandImage
+              image="city-of-london-skyline"
+              className="aspect-[4/3] lg:aspect-[4/5]"
+              sizes="(max-width: 1024px) 100vw, 440px"
+              preload
+            />
+            <ValuationRange className="relative z-10 -mt-16 ml-4 sm:ml-8 lg:absolute lg:-left-16 lg:bottom-8 lg:mt-0 lg:w-80" />
+          </div>
         </div>
       </section>
 
-      <ContentSection>
+      <ContentSection wide>
         <h2 className="font-display text-2xl font-semibold text-charcoal md:text-3xl">
           What Our Business Valuation Expert Witnesses Cover
         </h2>
-        <ol className="mt-8 divide-y divide-border border-y border-border">
-          {SERVICES.map((s, index) => (
-            <li key={s.id}>
-              <Link
-                href={`/services#${s.anchor}`}
-                className="group flex min-h-[44px] gap-4 py-5 transition hover:bg-muted/50 sm:gap-6"
-              >
-                <span className="w-8 shrink-0 font-mono text-sm font-semibold text-green">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="min-w-0">
-                  <span className="block font-semibold text-charcoal group-hover:text-green">
-                    {s.title}
-                  </span>
-                  <span className="mt-1 block text-sm text-foreground">
-                    {s.summary}
-                  </span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
+        <BrandImage
+          image="rolls-building-london"
+          className="mt-8 aspect-[16/9] md:aspect-[21/8]"
+          sizes="(max-width: 1024px) 100vw, 960px"
+          caption="The Rolls Building, Business and Property Courts of England and Wales"
+        />
+        <ServiceLedger services={SERVICES} />
       </ContentSection>
 
-      <ContentSection alt>
+      <ContentSection alt slash>
         <h2 className="font-display text-2xl font-semibold text-charcoal md:text-3xl">
           Business Valuation Expert Witness: Key UK Statistics
         </h2>
+        <dl className="mt-8 grid gap-4 sm:grid-cols-3">
+          {headlineStats.map((stat) => (
+            <div key={stat.label} className="relative bg-panel p-6 shadow-card">
+              <span aria-hidden className="absolute left-6 top-0 h-1.5 w-12 bg-green" />
+              <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground">
+                {stat.label}
+              </dt>
+              <dd className="mt-3 font-display text-4xl font-bold leading-none tracking-tight text-charcoal lg:text-[2.75rem]">
+                {stat.figure}
+                <span className="mt-2 block min-h-[1.25rem] text-sm font-semibold tracking-normal text-foreground">
+                  {stat.unit}
+                </span>
+              </dd>
+              <dd className="mt-3 text-xs text-foreground/80">{stat.source}</dd>
+            </div>
+          ))}
+        </dl>
         <div className="mt-6 overflow-x-auto border border-border">
           <table className="w-full min-w-[320px] border-collapse text-left text-sm">
             <caption className="mb-3 text-left text-sm font-medium text-charcoal">
@@ -169,19 +166,27 @@ export default function HomePage() {
         <h2 className="font-display text-2xl font-semibold text-charcoal md:text-3xl">
           Why UK Solicitors Trust Our Business Valuation Expert Witnesses
         </h2>
-        <ul className="mt-6 space-y-0 border-l-2 border-green/40 pl-0">
-          {trustPoints.map((point) => (
-            <li
-              key={point}
-              className="border-b border-border py-3 pl-5 text-foreground last:border-b-0"
-            >
-              {point}
-            </li>
-          ))}
-        </ul>
+        <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+          <ul className="space-y-0 border-l-2 border-green/40 pl-0">
+            {trustPoints.map((point) => (
+              <li
+                key={point}
+                className="border-b border-border py-3 pl-5 text-foreground last:border-b-0"
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
+          <BrandImage
+            image="lincolns-inn-new-square"
+            className="aspect-[4/3] lg:aspect-[4/5]"
+            sizes="(max-width: 1024px) 100vw, 400px"
+            caption="New Square, Lincoln's Inn"
+          />
+        </div>
       </ContentSection>
 
-      <ContentSection alt>
+      <ContentSection alt slash>
         <h2 className="font-display text-xl font-semibold text-charcoal">
           What is a business valuation expert witness?
         </h2>

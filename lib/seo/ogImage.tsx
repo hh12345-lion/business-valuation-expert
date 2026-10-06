@@ -22,9 +22,9 @@ export function renderOgCard(input: {
           justifyContent: "center",
           padding: 80,
           position: "relative",
-          background: "#0B1524",
-          color: "#fff",
-          fontFamily: "Georgia, ui-serif, serif",
+          background: "#1A1E1F",
+          color: "#EFEAE0",
+          fontFamily: "ui-sans-serif, system-ui, sans-serif",
         }}
       >
         <div
@@ -34,10 +34,10 @@ export function renderOgCard(input: {
             top: 0,
             bottom: 0,
             width: 12,
-            background: "#D9480F",
+            background: "#F16B12",
           }}
         />
-        <div style={{ fontSize: 28, color: "#0B6E99", marginBottom: 16 }}>
+        <div style={{ fontSize: 28, color: "#F16B12", marginBottom: 16 }}>
           {input.eyebrow}
         </div>
         <div style={{ fontSize: 48, fontWeight: 700, lineHeight: 1.15 }}>

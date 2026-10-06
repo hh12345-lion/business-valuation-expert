@@ -1,13 +1,13 @@
 import { getSiteDomain } from "@/lib/seo";
 
-/** Display name sent to n8n — must match netlify/functions/submit-lead.js */
+/** Display name sent to n8n, must match netlify/functions/submit-lead.js */
 export const BRAND_NAME = "Business Valuation Expert";
 
 export type LeadWebhookInput = {
   fullName: string;
   email: string;
   phone?: string;
-  /** Free-text enquiry body — always sent to n8n as `message`. */
+  /** Free-text enquiry body, always sent to n8n as `message`. */
   message?: string;
 };
 
@@ -19,7 +19,7 @@ export function getLeadWebhookUrl(): string {
   ).trim();
 }
 
-/** Outbound JSON shape — identical across all brand sites. */
+/** Outbound JSON shape, identical across all brand sites. */
 export function buildLeadWebhookPayload(input: LeadWebhookInput) {
   return {
     "Full Name": input.fullName,

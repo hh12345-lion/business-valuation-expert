@@ -1,4 +1,4 @@
-/** Apex canonical — www redirects here; sitemap/canonicals must not use www. */
+/** Apex canonical, www redirects here; sitemap/canonicals must not use www. */
 export const SITE_URL = "https://businessvaluationexperts.co.uk";
 export const SITE_NAME = "BusinessValuationExperts";
 export const SITE_EMAIL = "contact@businessvaluationexperts.co.uk";

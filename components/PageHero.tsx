@@ -1,4 +1,6 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
+import { siteImages } from "@/lib/site-images";
 
 export function PageHero({ children }: { children: ReactNode }) {
   return (
@@ -7,8 +9,16 @@ export function PageHero({ children }: { children: ReactNode }) {
         className="pointer-events-none absolute inset-y-0 left-0 w-1.5 bg-green"
         aria-hidden
       />
+      <Image
+        src={siteImages["bank-of-england"].src}
+        alt=""
+        aria-hidden
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover opacity-25 grayscale [mask-image:linear-gradient(to_left,black,transparent_75%)]"
+      />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.9) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.9) 1px, transparent 1px)",

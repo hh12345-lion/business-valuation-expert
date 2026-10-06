@@ -1,4 +1,4 @@
-# SEO Architecture — businessvaluationexperts.co.uk
+# SEO Architecture: businessvaluationexperts.co.uk
 
 **Canonical domain:** `https://www.businessvaluationexperts.co.uk`  
 **Site name:** BusinessValuationExperts  
@@ -22,7 +22,7 @@ This document is the single source of truth for keyword strategy, content cluste
 - **E-E-A-T signals:** ACA/FCA/CFA/CVA credentials, CPR Part 35 / FPR Part 25 compliance, *Ikarian Reefer* duties, sector experience, and citeable methodology tables.
 - Leverage **`.co.uk`** in copy where natural (trust signal for UK solicitors); see [Section 8](#8-couk-domain-advantage).
 
-### Tier 1 — Transactional
+### Tier 1: Transactional
 
 **Target pages:** homepage, `/services` sections, primary `/case-types/[slug]` pages.
 
@@ -47,7 +47,7 @@ This document is the single source of truth for keyword strategy, content cluste
 | `/case-types/shareholder-dispute-s994` | `S994 Shareholder Dispute Valuation Expert Witness UK \| …` |
 | `/case-types/divorce-financial-remedy` | `Divorce Business Valuation Expert Witness UK \| FPR Part 25` |
 
-### Tier 2 — Informational
+### Tier 2: Informational
 
 **Target pages:** `/guides/[slug]`, `/valuation-methods`, `/faq`, `/how-to-instruct`, `/fees`, `/what-is-a-business-valuation-expert-witness`.
 
@@ -64,7 +64,7 @@ This document is the single source of truth for keyword strategy, content cluste
 | what is personal goodwill in divorce UK | `/case-types/divorce-financial-remedy` | `/glossary#goodwill-personal-vs-business`, `/services#goodwill-intangible` |
 | HMRC share valuation dispute expert | `/guides/hmrc-share-valuation-disputes` | `/case-types/tax-tribunal-hmrc-valuation` |
 
-### Tier 3 — Long-tail / sector
+### Tier 3: Long-tail / sector
 
 **Target pages:** `/sectors/[slug]`, `/case-types/[slug]`.
 
@@ -344,7 +344,7 @@ Full term → anchor mappings: [Appendix C](#appendix-c-glossary-anchor-ids-and-
 
 ### Enforcement guidance
 
-**Recommended data model extension** — add to case-type, sector, and guide records:
+**Recommended data model extension**, add to case-type, sector, and guide records:
 
 ```ts
 relatedLinks?: { label: string; href: string }[];
@@ -412,7 +412,7 @@ flowchart TB
 | Type | Count | URL / @id | Notes |
 |------|-------|-----------|--------|
 | Organization | 1 | `#organization` | Root; referenced by all graphs |
-| ProfessionalService | 1 | `/` — `#professional-service` | Homepage `@graph` |
+| ProfessionalService | 1 | `/`, `#professional-service` | Homepage `@graph` |
 | WebSite + SearchAction | 1 | `/` | Optional `potentialAction` SearchAction |
 | Service | 8 | `/services#{fragment}` | `servicesPageGraph()` |
 | Article | 6 | `/guides/{slug}` | `articleSchema()` + `about` → Service `@id` |
@@ -600,10 +600,10 @@ Content structured for AI citation, featured snippets, and answer engines: defin
 |-------|----------|
 | UK geotargeting | No need for `hreflang="en-GB"` alternate URLs for a UK-only site; the ccTLD handles country targeting |
 | Keyword advantage | Stronger relevance signals for queries such as *business valuation expert witness UK* than a generic `.com` without hreflang/geotargeting configuration |
-| Google Search Console | Verify property for `www` and apex; confirm **Country targeting: United Kingdom** (typically defaults correctly for `.co.uk` — confirm after launch) |
+| Google Search Console | Verify property for `www` and apex; confirm **Country targeting: United Kingdom** (typically defaults correctly for `.co.uk`, confirm after launch) |
 | hreflang | Still include **`x-default`** in root `app/layout.tsx` via `metadata.alternates.languages` pointing to the canonical `https://www.businessvaluationexperts.co.uk/` URL for completeness and future locale expansion |
 | Canonical host | Always use `https://www.businessvaluationexperts.co.uk` (apex → www 301 in `middleware.ts`) |
-| Copy | Reference UK courts, CPR Part 35, FPR Part 25, Companies Act 2006, and GBP fees — reinforces geo relevance alongside the TLD |
+| Copy | Reference UK courts, CPR Part 35, FPR Part 25, Companies Act 2006, and GBP fees, reinforces geo relevance alongside the TLD |
 
 ### What not to do
 
@@ -625,7 +625,7 @@ Content structured for AI citation, featured snippets, and answer engines: defin
 | `BING_SITE_VERIFICATION` | Bing meta tag in layout | Pending |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Analytics component in layout | Pending |
 | Submit sitemap | GSC + Bing Webmaster after `app/sitemap.ts` deploy | Pending |
-| LinkedIn company page | **BusinessValuationExperts** — `sameAs` in Organization schema | Pending |
+| LinkedIn company page | **BusinessValuationExperts**, `sameAs` in Organization schema | Pending |
 | Directory submissions | jspubs, Academy of Experts, ICAEW, EWI | Manual post-launch |
 
 ### Sitemap priorities
@@ -692,11 +692,11 @@ BING_SITE_VERIFICATION=
 | `/guides` | 0.87 | Yes |
 | `/experts` | 0.80 | Yes |
 | `/glossary` | 0.75 | Yes |
-| `/contact` | — | Yes (excluded from sitemap) |
-| `/thank-you` | — | noindex |
-| `/privacy` | — | noindex |
-| `/terms` | — | noindex |
-| `/cookies` | — | noindex |
+| `/contact` |, | Yes (excluded from sitemap) |
+| `/thank-you` |, | noindex |
+| `/privacy` |, | noindex |
+| `/terms` |, | noindex |
+| `/cookies` |, | noindex |
 
 ### Dynamic pages (35 in sitemap)
 
@@ -818,16 +818,16 @@ Service fragment IDs on `/services#{anchor}` remain the canonical Service schema
 | `/how-to-instruct` | Yes | Yes | Partial | Yes | Yes (steps) |
 | `/fees` | Yes | Yes | Yes | Yes | Yes |
 | `/faq` | Yes | Yes | Yes | Yes | Yes |
-| `/qualifications` | Yes | Yes | Yes | Yes | — |
-| `/experts` | Yes | Yes | — | Yes | — |
+| `/qualifications` | Yes | Yes | Yes | Yes |, |
+| `/experts` | Yes | Yes |, | Yes |, |
 | `/glossary` | Yes | Yes | Per-term links | Yes | Yes (30 terms) |
-| `/contact` | Yes | Yes | — | — | N/A |
-| `app/sitemap.ts` | Yes | — | — | — | — |
-| `app/robots.ts` | Yes | — | — | — | — |
-| `lib/schema.ts` | Yes | — | — | — | — |
-| `lib/seo/publicUrlInventory.ts` | Yes | — | — | — | — |
-| `middleware.ts` (apex → www) | Yes | — | — | — | — |
-| hreflang `x-default` in layout | Yes | — | — | — | — |
+| `/contact` | Yes | Yes |, |, | N/A |
+| `app/sitemap.ts` | Yes |, |, |, |, |
+| `app/robots.ts` | Yes |, |, |, |, |
+| `lib/schema.ts` | Yes |, |, |, |, |
+| `lib/seo/publicUrlInventory.ts` | Yes |, |, |, |, |
+| `middleware.ts` (apex → www) | Yes |, |, |, |, |
+| hreflang `x-default` in layout | Yes |, |, |, |, |
 
 ---
 
@@ -848,4 +848,4 @@ https://www.businessvaluationexperts.co.uk
 
 ---
 
-*Last updated: May 2025 — aligns with businessvaluationexperts.co.uk build specification.*
+*Last updated: May 2025, aligns with businessvaluationexperts.co.uk build specification.*

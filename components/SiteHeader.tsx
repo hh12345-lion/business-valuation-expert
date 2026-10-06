@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -10,7 +11,6 @@ import {
   resourcesNavItems,
   sectorNavItems,
   serviceNavItems,
-  SITE_EMAIL,
   SITE_NAME,
   valuationMethodNavItems,
 } from "@/lib/site";
@@ -93,123 +93,103 @@ export function SiteHeader() {
 
   return (
     <>
-      {/* Ledger utility strip — not a sister-brand cream/teal bar */}
-      <div className="border-b border-border bg-charcoal text-[11px] text-white/70">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-6 lg:px-8">
-          <p className="font-medium tracking-[0.14em] uppercase">
-            England &amp; Wales · CPR 35 / FPR 25
-          </p>
-          <a
-            href={`mailto:${SITE_EMAIL}`}
-            className="hidden truncate transition hover:text-white sm:inline"
-          >
-            {SITE_EMAIL}
-          </a>
-        </div>
-      </div>
-
-      {/* Document masthead: monogram rail + brand + rule nav (scrolls with page) */}
-      <header className="border-b-2 border-charcoal/15 bg-panel">
-        <div className="mx-auto flex max-w-7xl items-stretch gap-0 px-4 sm:px-6 lg:px-8">
+      {/* Masthead: logo, inline nav, cut-corner call to action, and the monogram's orange bar as the baseline. */}
+      <header className="sticky top-0 z-40 bg-panel/95 backdrop-blur-md">
+        <div className="mx-auto flex h-[4.75rem] max-w-7xl items-center gap-6 px-4 sm:px-6 lg:h-[5.25rem] lg:px-8">
           <Link
             href="/"
-            className="group flex shrink-0 flex-col justify-center border-r-2 border-green py-5 pr-4 sm:pr-5"
+            className="shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green"
             aria-label={`${SITE_NAME} home`}
           >
-            <span className="font-display text-2xl font-bold leading-none tracking-tight text-charcoal sm:text-[1.75rem]">
-              BV
-            </span>
-            <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-gold">
-              Experts
-            </span>
+            <Image
+              src="/brand/logo.svg"
+              alt={SITE_NAME}
+              width={934}
+              height={293}
+              preload
+              className="w-[8.75rem] lg:w-[10.5rem]"
+            />
           </Link>
 
-          <div className="flex min-w-0 flex-1 flex-col">
-            <div className="flex items-center justify-between gap-3 py-4 sm:py-5">
-              <Link href="/" className="min-w-0">
-                <span className="block truncate font-display text-lg font-semibold leading-tight text-charcoal sm:text-xl lg:text-[1.35rem]">
-                  {SITE_NAME}
-                </span>
-                <span className="mt-0.5 block text-xs text-foreground/70">
-                  Business valuation expert witnesses
-                </span>
+          <nav
+            aria-label="Primary"
+            className="hidden min-w-0 flex-1 items-center justify-center gap-2 lg:flex xl:gap-4"
+          >
+            {navLinks.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`whitespace-nowrap border-b-2 px-1.5 py-2 text-[13px] font-medium transition xl:text-sm ${
+                  pathActive(pathname, href)
+                    ? "border-green text-charcoal"
+                    : "border-transparent text-foreground hover:border-border hover:text-charcoal"
+                }`}
+              >
+                {label}
               </Link>
+            ))}
+            <NavDropdown
+              label="Services"
+              href="/services"
+              items={serviceNavItems}
+              active={pathActive(pathname, "/services")}
+            />
+            <NavDropdown
+              label="Methods"
+              href="/valuation-methods"
+              items={valuationMethodNavItems}
+              active={pathActive(pathname, "/valuation-methods")}
+            />
+            <NavDropdown
+              label="Case Types"
+              href="/case-types"
+              items={caseTypeNavItems}
+              active={pathActive(pathname, "/case-types")}
+            />
+            <NavDropdown
+              label="Sectors"
+              href="/sectors"
+              items={sectorNavItems}
+              active={pathActive(pathname, "/sectors")}
+            />
+            <NavDropdown
+              label="Resources"
+              href="/guides"
+              items={resourcesNavItems}
+              active={resourcesActive(pathname)}
+            />
+          </nav>
 
-              <div className="flex shrink-0 items-center gap-2">
-                <Link
-                  href="/contact"
-                  className="hidden min-h-[44px] items-center border-2 border-charcoal bg-charcoal px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-white transition hover:bg-green hover:border-green sm:inline-flex sm:text-[13px]"
-                >
-                  Instruct
-                </Link>
-                <button
-                  type="button"
-                  className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-border bg-white text-charcoal lg:hidden"
-                  aria-expanded={menuOpen}
-                  aria-controls="bve-mobile-nav"
-                  onClick={() => setMenuOpen(true)}
-                >
-                  <span className="sr-only">Open menu</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-                    <path
-                      d="M4 7H20M4 12H16M4 17H20"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <nav
-              aria-label="Primary"
-              className="hidden min-w-0 items-center gap-3 border-t border-border py-1 lg:flex xl:gap-4"
+          <div className="ml-auto flex shrink-0 items-center gap-2 lg:ml-0">
+            <Link
+              href="/contact"
+              className="bve-cut-sm hidden min-h-[44px] items-center gap-2 bg-green px-5 py-2 font-display text-sm font-bold uppercase tracking-[0.08em] text-charcoal transition hover:bg-charcoal hover:text-background sm:inline-flex"
             >
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={`whitespace-nowrap border-b-2 px-1.5 py-2 text-[13px] font-medium transition xl:text-sm ${
-                    pathActive(pathname, href)
-                      ? "border-green text-charcoal"
-                      : "border-transparent text-foreground/85 hover:border-border hover:text-charcoal"
-                  }`}
-                >
-                  {label}
-                </Link>
-              ))}
-              <NavDropdown
-                label="Services"
-                href="/services"
-                items={serviceNavItems}
-                active={pathActive(pathname, "/services")}
-              />
-              <NavDropdown
-                label="Methods"
-                href="/valuation-methods"
-                items={valuationMethodNavItems}
-                active={pathActive(pathname, "/valuation-methods")}
-              />
-              <NavDropdown
-                label="Case Types"
-                href="/case-types"
-                items={caseTypeNavItems}
-                active={pathActive(pathname, "/case-types")}
-              />
-              <NavDropdown
-                label="Sectors"
-                href="/sectors"
-                items={sectorNavItems}
-                active={pathActive(pathname, "/sectors")}
-              />
-              <NavDropdown
-                label="Resources"
-                href="/guides"
-                items={resourcesNavItems}
-                active={resourcesActive(pathname)}
-              />
-            </nav>
+              Instruct an expert
+              <span aria-hidden>→</span>
+            </Link>
+            <button
+              type="button"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-border bg-panel text-charcoal lg:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="bve-mobile-nav"
+              onClick={() => setMenuOpen(true)}
+            >
+              <span className="sr-only">Open menu</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path
+                  d="M4 7H20M4 12H16M4 17H20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div aria-hidden className="h-px bg-charcoal/15">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <span className="block h-[3px] w-20 -translate-y-px bg-green" />
           </div>
         </div>
       </header>
@@ -279,7 +259,7 @@ export function SiteHeader() {
             <div className="border-t border-border p-4">
               <Link
                 href="/contact"
-                className="flex min-h-[44px] w-full items-center justify-center bg-green text-sm font-semibold uppercase tracking-[0.08em] text-white hover:bg-green/90"
+                className="flex min-h-[44px] w-full items-center justify-center bg-green font-display text-sm font-bold uppercase tracking-[0.08em] text-charcoal hover:bg-green/90"
               >
                 Instruct an expert
               </Link>
