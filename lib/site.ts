@@ -28,6 +28,7 @@ export const PUBLIC_SITE_URL = (() => {
 })();
 
 export const blogSlugs = [
+  "how-experts-assess-forecasts-projections-dcf-business-valuation",
   "business-valuation-checklist-documents-expert-needs",
 ] as const;
 

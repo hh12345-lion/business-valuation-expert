@@ -23,6 +23,13 @@ const breadcrumbs = [
 
 const posts = [
   {
+    slug: "how-experts-assess-forecasts-projections-dcf-business-valuation",
+    title: "How Experts Assess Forecasts and Projections in a DCF Business Valuation",
+    blurb:
+      "How a valuation expert tests the forecasts behind a DCF: supporting evidence, historical performance, growth and margin assumptions, terminal value and sensitivity.",
+    image: "/images/blog/how-experts-assess-forecasts-projections-dcf-business-valuation.webp",
+  },
+  {
     slug: "business-valuation-checklist-documents-expert-needs",
     title: "Business Valuation Checklist: What Documents Does an Expert Need?",
     blurb:

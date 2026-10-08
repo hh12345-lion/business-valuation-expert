@@ -20,6 +20,7 @@ const detailDates = new Map<string, string>([
   ...SECTORS.map((s) => [`/sectors/${s.slug}`, s.updatedAt] as const),
   ...GUIDES.map((g) => [`/guides/${g.slug}`, g.updatedAt] as const),
   ["/blog/business-valuation-checklist-documents-expert-needs", "2026-09-07"],
+  ["/blog/how-experts-assess-forecasts-projections-dcf-business-valuation", "2026-10-08"],
 ]);
 
 const hubDates = new Map<string, string>(
